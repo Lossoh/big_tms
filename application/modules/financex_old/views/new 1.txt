@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="stylesheet" href="<?=base_url()?>resource/css/app.v2.css" type="text/css" />
+ 
+
+<link rel="stylesheet" href="<?=base_url()?>resource/js/datatables/datatables.css" type="text/css" cache="false" />
+<link href="<?=base_url()?>resource/css/navbar.css" rel="stylesheet">
+
+<script src="<?=base_url()?>resource/js/jquery-2.1.1.min.js"></script>
+<script src="<?=base_url()?>resource/js/app.v2.js"></script>
+<script src="<?=base_url()?>resource/js/slider/bootstrap-slider.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/datepicker/bootstrap-datepicker.js" cache="false"></script>
+
+<script src="<?=base_url()?>resource/js/select2/select2.min.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/file-input/bootstrap-filestyle.min.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/wysiwyg/jquery.hotkeys.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/wysiwyg/bootstrap-wysiwyg.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/wysiwyg/demo.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/parsley/parsley.min.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/parsley/parsley.extend.js" cache="false"></script>
+<script src="<?=base_url()?>resource/js/datatables/jquery.dataTables.min.js"></script>
+</head>
+
+<script type="text/javascript">
+
+$(function() {
+
+	var oTable1 = $('#tbl-projects').dataTable({"aaSorting": [[0, 'asc']],
+		"bProcessing": true,
+      "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+      "sPaginationType": "full_numbers",
+	});
+	
+})
+
+	function insert_jo_no(jo_no) {
+		
+		opener.document.forms['myform'].site_cash_advance_jo.value  =jo_no;
+	}
+
+	function kosongkan_entitas_jo() 
+	{
+		
+		opener.document.forms['myform'].site_cash_advance_jo.value ="";
+	}
+	
+</script>	
+
+			<div class="row"> 
+				<div class="col-xs-12">
+					<div class="group">
+						<section class="panel panel-default">
+							<div class="table-responsive">
+								<?php echo validation_errors(); ?>
+									
+									<table id="tbl-projects" class="table table-striped table-hover b-t b-light text-sm">
+			
+										<thead>
+											<tr>
+												<th>
+													<select name="tahun" class="form-control">
+														<?php 
+																$year='2050';
+																$year1=date('Y');
+																for($thn='2015'; $thn<$year; $thn++){
+																	?>
+																	<option value="<?php echo $thn;?>" <?php if($thn==$year1){echo"selected";}?>><?php echo $thn; ?></option>
+														  <?php } ?>
+													</select>
+												</th>
+												<th width="160" colspan="2">
+													<div class="btn-group">
+														  <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+													</div>
+												</th> 
+											</tr>
+										</thead>
+									
+										<thead>
+										  <tr>
+											<th><?=lang('site_cash_advance_jo_no')?> </th>
+											<th><?=lang('site_cash_advance_jo_date')?> </th>
+											<th><?=lang('site_cash_advance_jo_debtor')?> </th>
+										  </tr> 
+										</thead>
+										<?php
+										  if (!empty($job_orders)) {
+										  foreach ($job_orders as $job_order) { ?>
+												<tbody>
+													  <tr>
+														<td>
+															<a href="javascript:kosongkan_entitas_jo();insert_jo_no('<?= addslashes($job_order['jo_no'])?>');window.close();">
+																<?=$job_order['jo_no']?>
+															</a>
+														</td>
+														<td><?=$job_order['jo_date']?></td>
+														<td><?=$job_order['debtor_code']?>&nbsp;-&nbsp;<?=$job_order['debtor_name']?></td>
+													  </td>
+													</tr>
+													<?php } } ?>
+											  </tbody>
+									</table>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+   

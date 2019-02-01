@@ -1,0 +1,109 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-01-22 02:47:04 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:11 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:15 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:18 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:18 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 08:47:27 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 24
+ERROR - 2016-01-22 08:47:27 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 29
+ERROR - 2016-01-22 08:47:27 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 35
+ERROR - 2016-01-22 02:47:27 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:37 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:47:37 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:48:22 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:48:22 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 08:48:23 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 24
+ERROR - 2016-01-22 08:48:23 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 29
+ERROR - 2016-01-22 08:48:23 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 35
+ERROR - 2016-01-22 02:48:23 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:48:32 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:48:32 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 08:51:13 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 24
+ERROR - 2016-01-22 08:51:13 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 29
+ERROR - 2016-01-22 08:51:13 --> Severity: Notice  --> Undefined variable: page C:\xamppserver\htdocs\tms_online\application\modules\sidebar\views\user_menu.php 35
+ERROR - 2016-01-22 02:51:13 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:51:20 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 02:51:20 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:22:05 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:22:05 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:23:49 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:23:49 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:23:58 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:23:58 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:26:38 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:26:38 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:26:40 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:26:40 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:27:33 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:27:33 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:27:34 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:27:34 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:07 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:07 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:09 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:09 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:18 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:18 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:32 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:30:32 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:34:39 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:34:39 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:34:53 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:34:53 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:35:11 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:35:11 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:35:12 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:35:12 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:39:54 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:39:54 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:39:56 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:39:56 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:40:49 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:40:49 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:40:51 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:40:51 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:42:44 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:42:44 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:42:45 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:42:45 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:46:45 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:46:46 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:46:58 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 03:46:58 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:02:26 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:02:26 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:02:28 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:02:28 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:22 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:22 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:34 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:34 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:36 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:39:36 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:40:35 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:40:35 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:40:38 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:40:38 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:48:11 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:48:11 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:48:15 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:48:15 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:49:59 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:49:59 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:50:10 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:50:10 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:51:54 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:51:54 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:51:56 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:51:56 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:53:42 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:53:42 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:54:13 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:54:13 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:54:14 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 04:54:14 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 05:30:50 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 05:30:50 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 05:30:52 --> 404 Page Not Found --> errors/error_404
+ERROR - 2016-01-22 05:30:52 --> 404 Page Not Found --> errors/error_404

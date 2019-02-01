@@ -1,0 +1,194 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2018-12-05 16:08:24 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 22:08:25 --> Could not find the language line "login_required"
+ERROR - 2018-12-05 16:08:25 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:14 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 22:54:14 --> Could not find the language line "login_required"
+ERROR - 2018-12-05 16:54:14 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Undefined variable: total_ca E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 44
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Undefined variable: total_rea E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:23 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:24 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 257
+ERROR - 2018-12-05 22:54:24 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 262
+ERROR - 2018-12-05 22:54:24 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 2432
+ERROR - 2018-12-05 22:54:24 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 2437
+ERROR - 2018-12-05 16:54:52 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:52 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:57 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 16:54:57 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Undefined variable: total_ca E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 44
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Undefined variable: total_rea E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 42
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 45
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 63
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 66
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 83
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 86
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 104
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 107
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:57 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 125
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 128
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 146
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 149
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 167
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\tms\application\modules\home\controllers\home.php 170
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 257
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 262
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 2432
+ERROR - 2018-12-05 22:54:58 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\tms\application\third_party\MX\Loader.php(319) : eval()'d code 2437

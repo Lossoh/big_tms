@@ -1,0 +1,21 @@
+  /*#detail th*/
+.ganjil{
+    border:0px;
+    border-top:solid 0px white;
+    border-bottom:solid 0px white;
+    background:url('../resource/images/ganjil.png');
+    font-weight:bold;
+	font-size:12px;
+	color:#555;
+	text-align:center;
+}
+.genap{
+    border:0px;
+    border-top:solid 0px white;
+    border-bottom:solid 0px white;
+    background:url('../resource/images/genap.png');
+    font-weight:bold;
+		font-size:12px;
+	color:#555;
+	text-align:center;
+}

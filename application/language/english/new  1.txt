@@ -1,0 +1,19 @@
+
+            <li class="<?php if($page == lang('invoices') OR $page == lang('estimates') OR $page == lang('payments') OR $page == lang('chart')){echo  "active"; }?>">
+                <a href="#" >
+                <i class="fa fa-shopping-cart icon"> <b class="bg-success"></b> </i>
+                <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span><?=lang('extras')?> </span> 
+				</a>
+                <ul class="nav lt">
+                  <li class="<?php if($page == lang('invoices') OR $page == lang('chart') OR $page == lang('add_invoice')){echo "active"; } ?>"> <a href="<?=base_url()?>clients/inv_manage" > <i class="fa fa-angle-right"></i>
+                  <span><?=lang('invoices')?></span> </a> </li>
+
+                  <li class="<?php if($page == lang('estimates')){echo "active"; } ?>"> <a href="<?=base_url()?>clients/estimates" > <i class="fa fa-angle-right"></i>
+                  <span><?=lang('estimates')?> </span> </a> </li>
+                  
+                  <li class="<?php if($page == lang('payments')){echo "active"; } ?>"> <a href="<?=base_url()?>clients/payments" > <i class="fa fa-angle-right"></i>
+                  <span><?=lang('payments_sent')?> </span> </a> </li>
+                </ul> 
+			</li>

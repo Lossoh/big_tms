@@ -1,0 +1,37 @@
+.navbar-right{
+    margin-right: 0px;
+}
+.time-header{
+    margin-top: -2px;
+}
+.sub-menu {
+    margin: 0;
+    text-decoration: none;
+    font-weight: 300 !important;
+    background: 0 0;
+    padding: 9px 15px 9px 43px !important;
+}
+.select2-container .select2-choice{
+    background-image: none;
+}
+.select2-container .select2-choice .select2-arrow{
+    background: none;
+    background-image: none;
+    border-left: none;
+}
+.form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after,.form-group.form-md-line-input .form-control.edited:not([readonly])~label:after,.form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after,.form-group.form-md-line-input .form-control:focus:not([readonly]){
+    visibility:visible;left:0;width:100%;border-bottom:#36c6d3 solid 2px;
+}
+.form-group.form-md-line-input select{
+    height: 39px;
+}
+.panel{
+    border-radius: 0px;
+}
+.panel-primary {
+    border: 1px solid #e7ecf1!important;
+}
+.panel.panel-default {
+    border-color: #e7ecf1;
+}
+.panel .table-striped>thead th{border-right:1px solid #f9f9f9;}

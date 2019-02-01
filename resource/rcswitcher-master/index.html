@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rcSwitcher</title>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="css/style.min.css">
+	<link type="text/css" rel="stylesheet" href="css/rcswitcher.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/rcswitcher.min.js"></script>
+</head>
+
+<script>
+
+
+			window.onload = function(){
+
+				$('.gender :radio').rcSwitcher({
+
+				// reverse: true,
+				theme: 'light',
+				// width: 70,
+				blobOffset: 0,
+				// inputs: true,
+				autoStick: true,
+
+				})
+				// Listen to status changes
+				.on( 'turnon.rcSwitcher', function( e, data ){
+
+					console.log( data.$input[0].checked );
+
+
+				} );
+
+				$('.level :radio').rcSwitcher({
+
+					// reverse: true,
+					theme: 'flat',
+					// width: 70,
+					blobOffset: 1,
+
+
+				});
+
+
+				$('.permissions :checkbox').rcSwitcher({
+
+					// reverse: true,
+					// inputs: true,
+					width: 44,
+					height: 16,
+					blobOffset: 2,
+					onText: 'YES',
+					offText: 'NO',
+					theme: 'dark',
+					// autoFontSize: true,
+					autoStick: true,
+
+				});
+
+				$('.delete :checkbox').rcSwitcher({
+
+					// reverse: true,
+					inputs: true,
+					// width: 70,
+					// height: 24,
+					// blobOffset: 2,
+					onText: 'Del',
+					offText: 'No',
+					theme: 'modern',
+					// autoFontSize: true,
+
+				});
+
+			};
+			
+
+		</script>
+
+
+
+	<body>
+		
+		<section class="container clear-fix">
+			
+			<div class="gender block">
+				<h4>Select Gender</h4>
+
+				<label for="gender">Male </label><input type="radio" name="gender" value="male" ><br />
+				<label >Female </label><input type="radio" name="gender" value="female" ><br />
+				<label >Select </label><input type="radio" name="gender" value="select" checked >
+
+				<div class="info">
+					<ul class="clear-fix">
+						<li>Theme<span>light</span></li>
+						<li>blobOffset<span>0</span></li>
+						<li>autoStick<span>true</span></li>
+					</ul>
+				</div>
+	
+			</div>
+			<div class="level block">
+				<h4>Level</h4>
+	
+				<label >level 1 </label><input type="radio" name="level" value="level1" ><br />
+				<label >level 2 </label><input type="radio" name="level" value="level2" disabled >
+				<label >level 3 </label><input type="radio" name="level" value="level3" checked >
+
+				<div class="info">
+					<ul class="clear-fix">
+						<li>Theme<span>flat</span></li>
+						<li>blobOffset<span>1</span></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="permissions block">
+				<h4>Permissions</h4>
+			
+				<label >Access CP</label><input type="checkbox" name="access_cp" value="access_cp"><br />
+				<label >Manage Users </label><input type="checkbox" name="manage_users" value="manage_users" checked >
+
+				<div class="info">
+					<ul class="clear-fix">
+						<li>width<span>44</span></li>
+						<li>height<span>16</span></li>
+						<li>Theme<span>dark</span></li>
+						<li>blobOffset<span>2</span></li>
+						<li>autoStick<span>true</span></li>
+						<li>onText<span>YES</span></li>
+						<li>offText<span>NO</span></li>
+					</ul>
+				</div>
+			</div>
+	
+			<div class="delete block">
+				<h4>Delete users</h4>
+			
+				<label >user1 </label><input type="checkbox" name="users_id[]" value="1" checked /><br />
+				<label >user2 </label><input type="checkbox" name="users_id[]" value="2" />
+
+				<div class="info">
+					<ul class="clear-fix">
+						<li>Theme<span>modern</span></li>
+						<li>inputs<span>true</span></li>
+						<li>onText<span>Del</span></li>
+						<li>offText<span>NO</span></li>
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		
+	</body>
+
+</html>

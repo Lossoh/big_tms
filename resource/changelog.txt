@@ -1,0 +1,95 @@
+Read the <a href="http://fodocs.gitbench.com/" target="_blank">Documentation here</a>
+<br>
+Freelance Office is a web based client portal application that you can use to manage your clients in one click.<br>
+
+### What is needed to Install? ### <br>
+<ul>
+<li> * Apache Server </li>
+<li> * MySQL 5 and above</li>
+<li> * Mod_Rewrite enabled</li>
+<li> * Cron Jobs</li>
+<li> * CURL PHP Library</li>
+<li> * PostMark Account (Optional)</li> 
+</ul>
+<br>
+### We need your contribution in translating the Language file to ###<br>
+<ul>
+<li>* French</li>
+<li>* Italian</li>
+<li>* Spanish</li>
+<li>* Portuguese</li>
+<li>* German</li>
+</ul>
+<br>
+
+### If you need help ###<br>
+<ul>
+<li>* Open an Issue on Bitbucket (http://bitbucket.org/wmandai/freelancer)</li>
+<li>* Email via Envato Contact form http://codecanyon.net/user/gitbench</li>
+</ul>
+
+
+<code>
+---- Changelog.txt ----<br>
+
+<ul>
+<li><strong>Version 1.5</strong> - 05-10-2014<br>
+Added Norwegian Language <br>
+Added Username change<br>
+Fixed - PDF error in Safari on Mac<br>
+Fixed - Added Updates System  <br>
+Fixed - Missing translation files <br>
+Fixed - Other Known bugs <br>
+
+</li>
+<li><strong>Version 1.4</strong> - 23-09-2014<br>
+Added Portuguese Language <br>
+Added Client Address to Invoice <br>
+Added Notes on projects for storing FTP and Host Details<br>
+Added Project Cost Calculator <br>
+Added Tasks and Invoice Items templates <br>
+Clients contacting other clients - fixed <br>
+Generate Own Invoice Number - fixed <br>
+WYSIWYG Default terms sections in Invoices- fixed <br>
+Password Allow Special Characters - Fixed <br>
+Phone number in profile - Fixed <br>
+VAT Number in profile and Invoices - Fixed <br>
+On Invoices added Tax Percentage - fixed
+Added Send Estimates to unregistred clients<br>
+Wrong Client assigned after editing Project - fixed <br>
+Collaborator account not showing assigned tasks - fixed <br>
+Added Github Language translations
+</li>
+
+<li><strong>Version 1.2</strong> - 16-09-2014<br>
+
+Removed Highcharts<br>
+
+Fixed Dashboard Links<br>
+
+Added French Language<br>
+
+Added Codeigniter License<br>
+
+Fixed - Other known bugs
+</li>
+
+<li><strong>Version 1.1</strong> - 10-09-2014<br>
+
+Added MySQL Database Backup<br>
+
+Fixed App_Lang hooks<br>
+
+Added PayPal URL to Database<br>
+
+Fixed - Bug Divison by Zero in Invoice Graphs
+</li>
+
+
+
+<li><strong>Version 1.0</strong> - 09-09-2014<br>
+ - Initial release</li>
+ 
+
+</ul>
+</code>
