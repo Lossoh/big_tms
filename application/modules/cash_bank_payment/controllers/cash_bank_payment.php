@@ -1086,15 +1086,17 @@ class cash_bank_payment extends MX_Controller
             /* Individual column filtering */
             $sSearchReg = $dt['search']['regex'];
             for ($i = 0; $i < count($aColumns); $i++) {
-                $bSearchable_ = $dt['columns'][$i]['searchable'];
-                if (isset($bSearchable_) && $bSearchable_ == "true" && $sSearchReg != 'false') {
-                    $search_val = $dt['columns'][$i]['search']['value'];
-                    if ($sWhere == "") {
-                        $sWhere = " WHERE ";
-                    } else {
-                        $sWhere .= " AND ";
+                if(isset($dt['columns'][$i]['searchable'])){
+                    $bSearchable_ = $dt['columns'][$i]['searchable'];
+                    if (isset($bSearchable_) && $bSearchable_ == "true" && $sSearchReg != 'false') {
+                        $search_val = $dt['columns'][$i]['search']['value'];
+                        if ($sWhere == "") {
+                            $sWhere = " WHERE ";
+                        } else {
+                            $sWhere .= " AND ";
+                        }
+                        $sWhere .= $aColumns[$i] . " LIKE '%" . $this->db->escape_like_str($search_val) . "%' ";
                     }
-                    $sWhere .= $aColumns[$i] . " LIKE '%" . $this->db->escape_like_str($search_val) . "%' ";
                 }
             }
 
