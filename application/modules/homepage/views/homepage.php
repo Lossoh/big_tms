@@ -80,7 +80,13 @@
 									</p>
 								</div>     
 								<div class="col-md-6 text-right">
-									<a class="btn btn-sm green" onclick="add_balance()"><i class="fa fa-plus"></i> Add <?=lang('balance')?></a>
+									<?php
+									if($data_daily_balance == 0){
+									?>
+										<a class="btn btn-sm green" onclick="add_balance()"><i class="fa fa-plus"></i> Add <?=lang('balance')?></a>
+									<?php
+									}
+									?>
 									<a class="btn btn-sm red" onclick="balance_pdf()"><i class="fa fa-file-pdf-o"></i> Print PDF</a>
 									<a class="btn btn-sm btn-success" onclick="balance_excel()"><i class="fa fa-file-excel-o"></i> Print Excel</a>
 								</div>

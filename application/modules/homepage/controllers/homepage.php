@@ -46,24 +46,27 @@ class Homepage extends MX_Controller {
         // UPDATE DAILY REMAINING BALANCE
         $use_balance = $this->homepage_model->get_use_balance(date('Y-m-d'));
         $get_daily_balance = $this->homepage_model->get_balance_get_by_date(date('Y-m-d'));
-        $remaining_balance = $get_daily_balance->balance + $use_balance;
-        $balance = array(
-            'use_balance' => $use_balance,
-            'remaining_balance' => $remaining_balance,
-            'user_modified' => $this->session->userdata('user_id'),
-            'date_modified' => date('Y-m-d'),
-            'time_modified' => date('H:i:s')
-        );
-        $this->db->where('rowID', $get_daily_balance->rowID);
-        $this->db->update('tr_log_balance', $balance);
-        
-        $params['user_rowID'] = $this->tank_auth->get_user_id();
-        $params['module'] = 'balances';
-        $params['module_field_id'] = $get_daily_balance->rowID;
-        $params['activity'] = ucfirst('Update Balance on ' . date('d F Y'));
-        $params['icon'] = 'fa-money';
-        modules::run('activitylog/log', $params); //log activity
-        
+        $data['data_daily_balance'] = count($get_daily_balance);
+        if(count($get_daily_balance) > 0){
+            $remaining_balance = $get_daily_balance->balance + $use_balance;
+            $balance = array(
+                'use_balance' => $use_balance,
+                'remaining_balance' => $remaining_balance,
+                'user_modified' => $this->session->userdata('user_id'),
+                'date_modified' => date('Y-m-d'),
+                'time_modified' => date('H:i:s')
+            );
+            $this->db->where('rowID', $get_daily_balance->rowID);
+            $this->db->update('tr_log_balance', $balance);
+            
+            $params['user_rowID'] = $this->tank_auth->get_user_id();
+            $params['module'] = 'balances';
+            $params['module_field_id'] = $get_daily_balance->rowID;
+            $params['activity'] = ucfirst('Update Balance on ' . date('d F Y'));
+            $params['icon'] = 'fa-money';
+            modules::run('activitylog/log', $params); //log activity
+        }
+            
         $this->template->set_layout('users')->build('homepage',isset($data) ? $data : NULL);
         
 	}

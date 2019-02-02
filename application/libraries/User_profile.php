@@ -259,8 +259,11 @@ class User_profile {
 		$this->ci->db->where('status','1');
 		$this->ci->db->where('Link_Menu',$link_menu);
         $query_menu = $this->ci->db->get('sa_menu');        
-        $get_menu = $query_menu->row();
-        $menu_id = $get_menu->Seq_Menu;
+		$get_menu = $query_menu->row();
+		if(count($get_menu) > 0)
+			$menu_id = $get_menu->Seq_Menu;
+		else	
+			$menu_id = 0;
 
         if($menu_id > 0){
     		$this->ci->db->where('user_rowID',$this->ci->session->userdata('user_id'));
