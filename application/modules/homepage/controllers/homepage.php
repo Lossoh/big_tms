@@ -333,16 +333,18 @@ class Homepage extends MX_Controller {
                     $row = array();
 
                     $dropdown_option = "";
-                   	$dropdown_option .= '<div class="btn-group">';
-					$dropdown_option .= '<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">';
-					$dropdown_option .= lang('options');
-					$dropdown_option .= '<span class="caret"></span>';
-					$dropdown_option .= '</button>';
-					$dropdown_option .= '<ul class="dropdown-menu">';
+                    if($aRow['date_created'] == date('Y-m-d')){
+                        $dropdown_option .= '<div class="btn-group">';
+                        $dropdown_option .= '<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">';
+                        $dropdown_option .= lang('options');
+                        $dropdown_option .= '<span class="caret"></span>';
+                        $dropdown_option .= '</button>';
+                        $dropdown_option .= '<ul class="dropdown-menu">';
                     
-                    $dropdown_option .= '<li><a href="javascript:void()" title="'.lang('update_option').'" onclick="edit_balance('.$aRow['rowID'].')"><i class="fa fa-pencil"></i>  ' . lang('update_option') . '</a></li>';
-                    
-					$dropdown_option .= '</ul></div>';
+                        $dropdown_option .= '<li><a href="javascript:void()" title="'.lang('update_option').'" onclick="edit_balance('.$aRow['rowID'].')"><i class="fa fa-pencil"></i>  ' . lang('update_option') . '</a></li>';
+                        
+                        $dropdown_option .= '</ul></div>';
+                    }
               
                     $row['dropdown_option'] = $dropdown_option;
                     $row['date_created'] = date("d F Y",strtotime($aRow['date_created']));
