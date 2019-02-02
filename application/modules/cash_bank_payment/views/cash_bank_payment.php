@@ -229,7 +229,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active" id="choose_payment"><a data-toggle="tab" href="#payment_detail"><span class="type">Payment</span> Details</a></li>
                         <li id="choose_detail"><a data-toggle="tab" id="choose_cb_detail" href="#cb_detail">Cash & Bank Details</a></li>
-                        <li id="choose_deduction"><a data-toggle="tab" href="#deduction_detail">Deduction Details</a></li>
+                        <!-- <li id="choose_deduction"><a data-toggle="tab" href="#deduction_detail">Deduction Details</a></li> -->
                     </ul>
                     <div class="tab-content">
                         <div id="payment_detail" class="tab-pane fade in active">

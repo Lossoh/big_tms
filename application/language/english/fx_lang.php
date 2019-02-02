@@ -147,7 +147,12 @@ $lang['petugas'] = 'Petugas';
 $lang['dicetak_oleh'] = 'Dicetak Oleh';
 $lang['tanggal_jam'] = 'Tgl Jam';
 $lang['choose_driver'] = 'Please choose the employee/driver';
-
+$lang['daily_balance'] = 'Daily Balance';
+$lang['new_balance'] = 'New Balance';
+$lang['use_balance'] = 'Use Balance';
+$lang['remaining_balance'] = 'Remaining Balance';
+$lang['balance_registered_successfully'] = 'Balance has been saved';
+$lang['balance_edited_successfully'] = 'Balance has been changed';
 ## End Finance & Accounting		##
 
 ## Realization List ##

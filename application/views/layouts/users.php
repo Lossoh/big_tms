@@ -3331,6 +3331,99 @@ function edit_uom(id)
 
 // end Uom
 
+
+// Balance
+function add_balance()
+{
+  $('#form')[0].reset(); 
+  $('#modal_form').modal('show'); 
+  $('.modal-title').text('<?=lang('new_balance')?>'); 
+  
+  $('[name="rowID"]').val('');
+}
+
+function balance_pdf(){
+        window.open('<?php echo base_url('homepage/pdf')?>');
+}
+function balance_excel(){
+        window.open('<?php echo base_url('homepage/excel')?>');
+}
+
+function save_balance(){
+    //alert ('tes');
+    var balance = $('[name="balance"]').val();
+    var validasi="";
+    
+    var data1=cekValidasi(balance,'<?=lang('balance')?>','<?=lang('not_empty')?>');
+    validasi=data1;
+    
+    if(validasi!=""){
+        sweetAlert('<?=lang('information')?>',''+validasi);
+        return false;
+    }else{
+        sweetAlert({
+          title: "Are you sure?",
+          text: "Are you want to Save?",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#286090",
+          confirmButtonText: "Yes, Save !",
+          closeOnConfirm: true,
+          html: false
+        },function(r){ 
+            if (r){
+                  $.ajax({
+                    url : "<?php echo base_url('homepage/create')?>",
+                    type: "POST",
+                    data:  $('#form').serializeArray(), 
+                    dataType: "JSON",
+                    success: function(data)
+                    {
+                        if (data.success){ 
+                            $('#modal_form').modal('hide');
+                            //swal("Save!", "Data has been Saved.", "success");
+                            sweetAlert('<?=lang('information')?>',''+data.msg);   
+                            location.replace("<?php echo base_url('homepage')?>");
+                        }else{
+                            sweetAlert('<?=lang('information')?>',''+data.msg); 
+                        }    
+                        
+                    },
+                    error: function (jqXHR, textStatus, errorThrown)
+                    {
+                        swal("Oops!", "Error adding / update data", "error");
+                    }
+                });  
+            }
+        });
+    }
+}
+
+function edit_balance(id)
+{
+      $('#form')[0].reset();
+      $.ajax({
+        url : "<?php echo base_url('homepage/get_data_edit/')?>/" + id,
+        type: "GET",
+        dataType: 'json',
+        success: function(data)
+        {
+            $('[name="rowID"]').val(data.rowID);
+            $('[name="balance"]').val(tandaPemisahTitik(data.balance));
+            
+            $('#modal_form').modal('show');
+            $('.modal-title').text('Edit Balance'); 
+            
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            swal("Oops!", "Error adding / update data", "error");
+        }
+    });
+}
+
+// end Balance
+
 // Item
 function add_item()
 {
