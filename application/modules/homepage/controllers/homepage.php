@@ -59,12 +59,12 @@ class Homepage extends MX_Controller {
             $this->db->where('rowID', $get_daily_balance->rowID);
             $this->db->update('tr_log_balance', $balance);
             
-            $params['user_rowID'] = $this->tank_auth->get_user_id();
-            $params['module'] = 'balances';
-            $params['module_field_id'] = $get_daily_balance->rowID;
-            $params['activity'] = ucfirst('Update Balance on ' . date('d F Y'));
-            $params['icon'] = 'fa-money';
-            modules::run('activitylog/log', $params); //log activity
+            // $params['user_rowID'] = $this->tank_auth->get_user_id();
+            // $params['module'] = 'balances';
+            // $params['module_field_id'] = $get_daily_balance->rowID;
+            // $params['activity'] = ucfirst('Update Balance on ' . date('d F Y'));
+            // $params['icon'] = 'fa-money';
+            // modules::run('activitylog/log', $params); //log activity
         }
             
         $this->template->set_layout('users')->build('homepage',isset($data) ? $data : NULL);
