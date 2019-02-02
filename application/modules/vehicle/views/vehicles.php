@@ -165,7 +165,7 @@
         <div class="form-group form-md-line-input">
             <label class="col-lg-4 control-label"><?=lang('vehicle_police_no')?> <span class="text-danger">*</span></label>
             <div class="col-lg-8">
-                <input type="text" class="form-control"  placeholder="XX 1234 XXX" value="" name="vehicle_police_no" id="vehicle_police_no" maxlength="12" required>
+                <input type="text" class="form-control"  placeholder="XX 1234 XXX" value="" name="vehicle_police_no" id="vehicle_police_no" maxlength="15" required>
             </div>
         </div>
       
