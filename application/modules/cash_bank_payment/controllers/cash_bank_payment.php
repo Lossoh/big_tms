@@ -1320,9 +1320,14 @@ class cash_bank_payment extends MX_Controller
         $this->db->where('status','1');
         $this->db->where('Link_Menu', 'cash_bank_payment');
         $query_menu = $this->db->get('sa_menu');        
-        $get_menu = $query_menu->row();
-        $menu_id = $get_menu->Seq_Menu;
-
+        if(count($query_menu) > 0){
+            $get_menu = $query_menu->row();
+            $menu_id = $get_menu->Seq_Menu;
+        }
+        else{
+            $menu_id = 0;
+        }
+        
         if($menu_id > 0){
             $this->db->where('user_rowID',$this->session->userdata('user_id'));
             $this->db->where('StatusUsermenu','1');
@@ -1340,6 +1345,19 @@ class cash_bank_payment extends MX_Controller
         
     }
 
+    function get_log_limited_printed($trx_no,$module)
+	{
+        $sql = "SELECT * FROM activities 
+                WHERE user_rowID = ".$this->session->userdata('user_id')." AND activity LIKE '%".$trx_no."%' AND module = '".$module."' 
+                        AND icon = 'fa-print' AND deleted = 0";
+        $query = $this->db->query($sql);
+		if ($query->num_rows() > 0){
+            return $query->num_rows();
+		} else{
+			return 0;
+		}	   
+    }
+    
 }
 
 /* End of file contacts.php */
