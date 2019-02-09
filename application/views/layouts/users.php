@@ -53,7 +53,6 @@
     <link rel="stylesheet" href="<?=base_url()?>resource/plugin/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="<?=base_url()?>resource/css/custom.css" type="text/css" cache="false" />
 
-
     <script src="<?=base_url()?>resource/js/jquery-2.1.4.min.js"></script>
     <script src="<?=base_url()?>resource/js/function.js"></script>
     <script src="<?=base_url()?>resource/js/sweet-alert.js"></script>
