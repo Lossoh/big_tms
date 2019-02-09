@@ -13,7 +13,7 @@
 				<!-- BEGIN DASHBOARD STATS 1-->
 				<div class="row">
 					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-						<a class="dashboard-stat dashboard-stat-v2 blue" href="#">
+						<a class="dashboard-stat dashboard-stat-v2 blue" href="<?= base_url() ?>job_order">
 							<div class="visual">
 								<i class="fa fa-comments"></i>
 							</div>
@@ -26,7 +26,7 @@
 						</a>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-						<a class="dashboard-stat dashboard-stat-v2 red" href="#">
+						<a class="dashboard-stat dashboard-stat-v2 red" href="<?= base_url() ?>finances/cash_advance_list">
 							<div class="visual">
 								<i class="fa fa-dollar"></i>
 							</div>
@@ -39,7 +39,7 @@
 						</a>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-						<a class="dashboard-stat dashboard-stat-v2 green" href="#">
+						<a class="dashboard-stat dashboard-stat-v2 green" href="<?= base_url() ?>realizations">
 							<div class="visual">
 								<i class="fa fa-money"></i>
 							</div>
@@ -52,7 +52,7 @@
 						</a>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-						<a class="dashboard-stat dashboard-stat-v2 purple" href="#">
+						<a class="dashboard-stat dashboard-stat-v2 purple" href="<?= base_url() ?>verification_document">
 							<div class="visual">
 								<i class="fa fa-book"></i>
 							</div>
