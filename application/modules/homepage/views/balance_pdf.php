@@ -47,6 +47,7 @@
 			<tr>
 				<th align="center" height="30px">No</th>
 				<th align="center"><?php echo lang('date'); ?></th>
+				<th align="center"><?php echo lang('department'); ?></th>
 				<th align="center"><?php echo lang('balance'); ?></th>
 				<th align="center"><?php echo lang('use_balance'); ?></th>
 				<th align="center"><?php echo lang('remaining_balance'); ?></th>
@@ -55,7 +56,10 @@
 			$i=0;
 			foreach($balance as $val){
 				$i++;
+                $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $val->dep_rowID);
+
 				$date = date('d-m-Y',strtotime($val->date_created));
+				$department=ucwords($get_department->dep_cd. ' - ' .$get_department->dep_name);
 				$balance=number_format($val->balance);
 				$use_balance=number_format($val->use_balance);
 				$remaining_balance=number_format($val->remaining_balance);
@@ -63,6 +67,7 @@
 				<tr style="font-size:9px">
 					<td><?php echo $i;?></td>
 					<td align="left"><?php echo $date;?></td>
+					<td align="left"><?php echo $department;?></td>
 					<td align="right"><?php echo $balance;?></td>
 					<td align="right"><?php echo $use_balance;?></td>
 					<td align="right"><?php echo $remaining_balance;?></td>

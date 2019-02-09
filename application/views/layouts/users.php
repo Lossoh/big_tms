@@ -3352,10 +3352,12 @@ function balance_excel(){
 function save_balance(){
     //alert ('tes');
     var balance = $('[name="balance"]').val();
+    var department = $('[name="department"]').val();
     var validasi="";
     
     var data1=cekValidasi(balance,'<?=lang('balance')?>','<?=lang('not_empty')?>');
-    validasi=data1;
+    var data2=cekValidasi(department,'<?=lang('department')?>','<?=lang('not_empty')?>');
+    validasi=data1+data2;
     
     if(validasi!=""){
         sweetAlert('<?=lang('information')?>',''+validasi);
@@ -3403,12 +3405,13 @@ function edit_balance(id)
 {
       $('#form')[0].reset();
       $.ajax({
-        url : "<?php echo base_url('homepage/get_data_edit/')?>/" + id,
+        url : "<?php echo base_url('homepage/get_data_edit')?>/" + id,
         type: "GET",
         dataType: 'json',
         success: function(data)
         {
             $('[name="rowID"]').val(data.rowID);
+            $('[name="department"]').select2('val',data.dep_rowID);
             $('[name="balance"]').val(tandaPemisahTitik(data.balance));
             
             $('#modal_form').modal('show');

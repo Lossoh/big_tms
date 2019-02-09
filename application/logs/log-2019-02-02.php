@@ -1510,3 +1510,36 @@ ERROR - 2019-02-02 11:42:21 --> Severity: Notice  --> Undefined variable: start_
 ERROR - 2019-02-02 11:42:21 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2534
 ERROR - 2019-02-02 11:42:21 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
 ERROR - 2019-02-02 05:42:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:44:14 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:44:14 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:44:15 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:44:18 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:44:18 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 318
+ERROR - 2019-02-02 11:44:18 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 323
+ERROR - 2019-02-02 11:44:18 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2529
+ERROR - 2019-02-02 11:44:18 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2534
+ERROR - 2019-02-02 11:44:18 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:44:18 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:44:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:44:22 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:44:23 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:44:27 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:44:27 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 318
+ERROR - 2019-02-02 11:44:27 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 323
+ERROR - 2019-02-02 11:44:27 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2529
+ERROR - 2019-02-02 11:44:27 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2534
+ERROR - 2019-02-02 11:44:27 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:44:27 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:45:15 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:45:15 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:45:16 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:45:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:45:21 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 318
+ERROR - 2019-02-02 11:45:21 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 323
+ERROR - 2019-02-02 11:45:21 --> Severity: Notice  --> Undefined variable: start_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2529
+ERROR - 2019-02-02 11:45:21 --> Severity: Notice  --> Undefined variable: end_date E:\XAMPP\htdocs\big_tms\application\third_party\MX\Loader.php(319) : eval()'d code 2534
+ERROR - 2019-02-02 11:45:21 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:45:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 05:45:47 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75
+ERROR - 2019-02-02 11:45:47 --> Severity: Notice  --> Trying to get property of non-object E:\XAMPP\htdocs\big_tms\application\libraries\User_profile.php 264
+ERROR - 2019-02-02 05:45:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\XAMPP\htdocs\big_tms\system\database\drivers\mysql\mysql_driver.php 75

@@ -21,7 +21,7 @@
                     if($this->user_profile->get_user_access('Created') == 1){
                     ?>
                         <a class="btn btn-sm green" onclick="add_cash_advance()"><i class="fa fa-plus"></i> <?=lang('new')?>  <?=lang('cash_advance')?></a>
-                        <a class="btn btn-sm green" href="<?=base_url()?>finances/create_refund_hdr"><i class="fa fa-money"></i> <?=lang('new')?> <?=lang('refund_option')?></a>
+                        <a class="btn btn-sm btn-warning" href="<?=base_url()?>finances/create_refund_hdr"><i class="fa fa-money"></i> <?=lang('new')?> <?=lang('refund_option')?></a>
                     <?php
                     }
                     ?>

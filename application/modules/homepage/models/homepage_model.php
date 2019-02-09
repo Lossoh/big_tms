@@ -60,6 +60,21 @@ class Homepage_model extends CI_Model
         }
     }
 
+    function get_all_department()
+	{
+        $this->db->select('*');
+        $this->db->from('sa_dep');
+        $this->db->where('deleted', 0);
+        $this->db->order_by('dep_cd','asc');
+        $query=$this->db->get();
+        
+        if ($query->num_rows() > 0){
+            return $query->result();
+        } else{
+            return NULL;
+        }
+    }
+
     function get_all_records_by_period($start_date, $end_date)
 	{
         $this->db->select('*');
@@ -85,18 +100,20 @@ class Homepage_model extends CI_Model
 		return $query->row();
 	}
 	
-    function get_balance_get_by_date($date)
+    function get_balance_get_by_date($dep_rowID, $date)
 	{  
 		$this->db->from('tr_log_balance');
+		$this->db->where('dep_rowID',$dep_rowID);
 		$this->db->where('date_created',$date);
 		$query = $this->db->get();
 		return $query->row();
 	}
 	
-    function get_use_balance($date)
+    function get_use_balance($coa_rowID, $date)
 	{  
 		$this->db->select_sum('trx_amt');
 		$this->db->from('cb_trx_hdr');
+		$this->db->where('coa_rowID',$coa_rowID);
 		$this->db->where('date_created',$date);
 		$query = $this->db->get();
 		return $query->row()->trx_amt;

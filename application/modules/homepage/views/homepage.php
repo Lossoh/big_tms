@@ -80,13 +80,7 @@
 									</p>
 								</div>     
 								<div class="col-md-6 text-right">
-									<?php
-									if($data_daily_balance == 0){
-									?>
-										<a class="btn btn-sm green" onclick="add_balance()"><i class="fa fa-plus"></i> Add <?=lang('balance')?></a>
-									<?php
-									}
-									?>
+									<a class="btn btn-sm green" onclick="add_balance()"><i class="fa fa-plus"></i> Add <?=lang('balance')?></a>
 									<a class="btn btn-sm red" onclick="balance_pdf()"><i class="fa fa-file-pdf-o"></i> Print PDF</a>
 									<a class="btn btn-sm btn-success" onclick="balance_excel()"><i class="fa fa-file-excel-o"></i> Print Excel</a>
 								</div>
@@ -113,6 +107,7 @@
 											<tr>
 												<th><?=lang('options')?></th>
 												<th><?=lang('date')?> </th>
+												<th><?=lang('department')?> </th>
 												<th><?=lang('balance')?> </th>
 												<th><?=lang('use_balance')?> </th>
 												<th><?=lang('remaining_balance')?> </th>
@@ -146,6 +141,24 @@
 							<label class="col-lg-4 control-label"><?=lang('balance')?><span class="text-danger">*</span></label>
 							<div class="col-lg-8">
 								<input type="text" class="form-control angka_jutaan" name="balance" placeholder="Input <?=lang('balance')?>" autocomplete="off" required>
+							</div>
+						</div>		
+						
+						<div class="form-group form-md-line-input">
+							<label class="col-lg-4 control-label"><?=lang('department')?><span class="text-danger">*</span></label>
+							<div class="col-lg-8">
+								<select class="form-control all_select2" id="department" name="department" required>
+									<option value=""><?=lang('select').' '.lang('department');?></option>
+									<?php
+										if (!empty($departments)) {
+											foreach ($departments as $department) { 
+									?>
+											<option value="<?php echo $department->rowID; ?>"><?php echo $department->dep_cd;?> - <?php echo $department->dep_name;?></option>
+									<?php 
+											}
+										}
+									?>
+								</select>
 							</div>
 						</div>						
 					</form>
@@ -186,13 +199,16 @@ $(function() {
                     "data": "date_created"
                 },
                 {
-                    "data": "balance"
+                    "data": "department"
                 },
                 {
-                    "data": "use_balance"
+                    "data": "balance", "className": "text-right"
                 },
                 {
-                    "data": "remaining_balance"
+                    "data": "use_balance", "className": "text-right"
+                },
+                {
+                    "data": "remaining_balance", "className": "text-right"
                 },
                 {
                     "data": "start_date", "bVisible" : false
@@ -216,12 +232,12 @@ $(function() {
         });
         $(".start_date").on("dp.change", function (e) {
             var start_date = $("#start_date").val();
-            table_daily_balance.columns(5).search(start_date).draw();
+            table_daily_balance.columns(6).search(start_date).draw();
             $("#start_date").blur();
         });
         $(".end_date").on("dp.change", function (e) {
             var end_date = $("#end_date").val();
-            table_daily_balance.columns(6).search(end_date).draw();
+            table_daily_balance.columns(7).search(end_date).draw();
             $("#end_date").blur();
         });
     });
