@@ -3335,29 +3335,32 @@ function edit_uom(id)
 // Balance
 function add_balance()
 {
-  $('#form')[0].reset(); 
-  $('#modal_form').modal('show'); 
-  $('.modal-title').text('<?=lang('new_balance')?>'); 
-  
-  $('[name="rowID"]').val('');
+    $('#form')[0].reset(); 
+    $('#modal_form').modal('show'); 
+    $('.modal-title').text('<?=lang('new_balance')?>'); 
+
+    $('[name="rowID"]').val('');
+    $('[name="date"]').attr('readonly',false);
+    $('[name="department"]').attr('disabled',false);
 }
 
 function balance_pdf(){
-        window.open('<?php echo base_url('homepage/pdf')?>');
+    window.open('<?php echo base_url('homepage/pdf')?>');
 }
 function balance_excel(){
-        window.open('<?php echo base_url('homepage/excel')?>');
+    window.open('<?php echo base_url('homepage/excel')?>');
 }
 
 function save_balance(){
-    //alert ('tes');
+    var date = $('[name="date"]').val();
     var balance = $('[name="balance"]').val();
     var department = $('[name="department"]').val();
     var validasi="";
     
-    var data1=cekValidasi(balance,'<?=lang('balance')?>','<?=lang('not_empty')?>');
-    var data2=cekValidasi(department,'<?=lang('department')?>','<?=lang('not_empty')?>');
-    validasi=data1+data2;
+    var data1=cekValidasi(date,'<?=lang('date')?>','<?=lang('not_empty')?>');
+    var data2=cekValidasi(balance,'<?=lang('balance')?>','<?=lang('not_empty')?>');
+    var data3=cekValidasi(department,'<?=lang('department')?>','<?=lang('not_empty')?>');
+    validasi=data1+data2+data3;
     
     if(validasi!=""){
         sweetAlert('<?=lang('information')?>',''+validasi);
@@ -3403,16 +3406,28 @@ function save_balance(){
 
 function edit_balance(id)
 {
-      $('#form')[0].reset();
-      $.ajax({
+    var toDdMmYy = function(input) {
+        var ptrn = /(\d{4})\-(\d{2})\-(\d{2})/;
+        if(!input || !input.match(ptrn)) {
+            return null;
+        }
+        return input.replace(ptrn, '$3-$2-$1');
+    };
+
+    $('#form')[0].reset();
+    $('[name="date"]').attr('readonly',true);
+    $('[name="department"]').attr('disabled',true);
+
+    $.ajax({
         url : "<?php echo base_url('homepage/get_data_edit')?>/" + id,
         type: "GET",
         dataType: 'json',
         success: function(data)
         {
             $('[name="rowID"]').val(data.rowID);
-            $('[name="department"]').select2('val',data.dep_rowID);
+            $('[name="date"]').val(toDdMmYy(data.date));
             $('[name="balance"]').val(tandaPemisahTitik(data.balance));
+            $('[name="department"]').select2('val',data.dep_rowID);
             
             $('#modal_form').modal('show');
             $('.modal-title').text('Edit Balance'); 

@@ -43,34 +43,22 @@ class Homepage extends MX_Controller {
         $data['realization_total'] = count($this->homepage_model->get_data_realization_ca());
         $data['unverified_total'] = count($this->homepage_model->get_data_document_unverified());
         $data['departments'] = $this->homepage_model->get_all_department();
-
-        if(count($data['departments']) > 0){
-            foreach($data['departments'] as $row_dep){
-                // UPDATE DAILY REMAINING BALANCE
-                $use_balance = $this->homepage_model->get_use_balance($row_dep->cash_gl_rowID, date('Y-m-d'));
-                $get_daily_balance = $this->homepage_model->get_balance_get_by_date($row_dep->rowID, date('Y-m-d'));
-                if(count($get_daily_balance) > 0){
-                    $remaining_balance = $get_daily_balance->balance + $use_balance;
-                    $balance = array(
-                        'use_balance' => $use_balance,
-                        'remaining_balance' => $remaining_balance,
-                        'user_modified' => $this->session->userdata('user_id'),
-                        'date_modified' => date('Y-m-d'),
-                        'time_modified' => date('H:i:s')
-                    );
-                    $this->db->where('rowID', $get_daily_balance->rowID);
-                    $this->db->update('tr_log_balance', $balance);
-                    
-                    // $params['user_rowID'] = $this->tank_auth->get_user_id();
-                    // $params['module'] = 'balances';
-                    // $params['module_field_id'] = $get_daily_balance->rowID;
-                    // $params['activity'] = ucfirst('Update Balance on ' . date('d F Y'));
-                    // $params['icon'] = 'fa-money';
-                    // modules::run('activitylog/log', $params); //log activity
-                }
-            }
+        
+        $log_balance_departments = $this->homepage_model->get_log_balance_department();
+        $data_log_balance = array();
+        foreach($log_balance_departments as $row){
+            $use_balance_total = $this->homepage_model->get_log_use_balance_department_by_coa_id($row->gl_rowID);
+            $remaining_balance_total = $row->balance_total + $use_balance_total;
+            $data_log_balance_tmp = array(
+                'department_name' => $row->name,
+                'balance_total' => $row->balance_total,
+                'use_balance_total' => $use_balance_total,
+                'remaining_balance_total' => $remaining_balance_total,
+            );
+            array_push($data_log_balance, $data_log_balance_tmp);
         }
-            
+        $data['data_log_balance'] = $data_log_balance;
+
         $this->template->set_layout('users')->build('homepage',isset($data) ? $data : NULL);
         
 	}
@@ -138,15 +126,31 @@ class Homepage extends MX_Controller {
         //echo "<pre>"; print_r($dataPost); echo "</pre>"; exit();
         error_reporting(E_ALL);
         Header('Content-Type: application/json; charset=UTF8');
-        $get_data = $this->db->get_where('tr_log_balance', array('date_created' => date('Y-m-d'), 'dep_rowID' => $dataPost['department']))->row_array();
+        
+        $date = date('Y-m-d',strtotime($dataPost['date']));
+        $department_id = 0;
+        if(isset($dataPost['department']))
+            $department_id = $dataPost['department'];
+
+        $get_data = $this->db->get_where('tr_log_balance', array('date' => $date, 'dep_rowID' => $department_id))->row_array();
                         
         if (empty($dataPost['rowID'])) {// add new
+            $balance_id = 0;
             if (!empty($get_data['date_created'])) {
-                echo json_encode(array("success" => false, 'msg' => lang('already_exist')));
-                exit();
+                $balance_id = $get_data['rowID'];
+
+                $balance = array(
+                    'balance' => $get_data['balance'] + str_replace('.','',$dataPost['balance']),
+                    'user_modified' => $this->session->userdata('user_id'),
+                    'date_modified' => date('Y-m-d'),
+                    'time_modified' => date('H:i:s')
+                );
+                $this->db->where('rowID', $balance_id);
+                $this->db->update('tr_log_balance', $balance);
             } else {
                	$balance = array(
-                    'dep_rowID' => $dataPost['department'],
+                    'date' => $date,
+                    'dep_rowID' => $department_id,
                     'balance' => str_replace('.','',$dataPost['balance']),
                     'user_created' => $this->session->userdata('user_id'),
                     'date_created' => date('Y-m-d'),
@@ -155,21 +159,20 @@ class Homepage extends MX_Controller {
 
                 $this->db->insert('tr_log_balance', $balance);
                 $balance_id = $this->db->insert_id();
-    
-                $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $dataPost['department']);
-
-                $params['user_rowID'] = $this->tank_auth->get_user_id();
-                $params['module'] = 'balances';
-                $params['module_field_id'] = $balance_id;
-                $params['activity'] = ucfirst('Added a new Balance ' . $get_department->dep_name . ' on ' . date('d F Y'));
-                $params['icon'] = 'fa-money';
-                modules::run('activitylog/log', $params); //log activity
-                echo json_encode(array("success" => true, 'msg' => lang('balance_registered_successfully')));
-                exit;
             }
+
+            $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $department_id);
+
+            $params['user_rowID'] = $this->tank_auth->get_user_id();
+            $params['module'] = 'balances';
+            $params['module_field_id'] = $balance_id;
+            $params['activity'] = ucfirst('Added a new Balance ' . $get_department->dep_name . ' on ' . date('d F Y'));
+            $params['icon'] = 'fa-money';
+            modules::run('activitylog/log', $params); //log activity
+            echo json_encode(array("success" => true, 'msg' => lang('balance_registered_successfully')));
+            exit;
         } else { // edit Data
             $balance = array(
-                'dep_rowID' => $dataPost['department'],
                 'balance' => str_replace('.','',$dataPost['balance']),
                 'user_modified' => $this->session->userdata('user_id'),
                 'date_modified' => date('Y-m-d'),
@@ -178,7 +181,8 @@ class Homepage extends MX_Controller {
             $this->db->where('rowID', $dataPost['rowID']);
             $this->db->update('tr_log_balance', $balance);
             
-            $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $dataPost['department']);
+            $get_log_balance = $this->homepage_model->get_by_id($tabel = 'tr_log_balance', $dataPost['rowID']);
+            $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $get_log_balance->dep_rowID);
 
             $params['user_rowID'] = $this->tank_auth->get_user_id();
             $params['module'] = 'balances';
@@ -208,17 +212,17 @@ class Homepage extends MX_Controller {
             }else{
                 $end_date = date("Y-m-d",strtotime($this->session->userdata('end_date_daily_balance')));
             }
-            $str_between = " AND tr_log_balance.date_created BETWEEN '" . $start_date . "' and '" . $end_date ."'";
+            $str_between = " AND tr_log_balance.date BETWEEN '" . $start_date . "' and '" . $end_date ."'";
         
             $dt['table'] = 'tr_log_balance';
             $dt['id'] = 'rowID';
 
             $aColumnTable = array(
-                'tr_log_balance.rowID', 'tr_log_balance.date_created', 'tr_log_balance.dep_rowID', 'tr_log_balance.balance', 'tr_log_balance.remaining_balance', 'tr_log_balance.use_balance'
+                'tr_log_balance.rowID', 'tr_log_balance.date', 'tr_log_balance.dep_rowID', 'tr_log_balance.balance', 'tr_log_balance.remaining_balance', 'tr_log_balance.use_balance'
             );
 
             $aColumns = array(
-                'tr_log_balance.rowID', 'tr_log_balance.date_created', 'tr_log_balance.dep_rowID', 'tr_log_balance.balance', 'tr_log_balance.remaining_balance', 'tr_log_balance.use_balance'
+                'tr_log_balance.rowID', 'tr_log_balance.date', 'tr_log_balance.dep_rowID', 'tr_log_balance.balance', 'tr_log_balance.remaining_balance', 'tr_log_balance.use_balance'
             );
 
             $groupBy = '';
@@ -270,7 +274,7 @@ class Homepage extends MX_Controller {
                 }else{
                     $end_date = date("Y-m-d",strtotime($this->session->userdata('end_date_daily_balance')));
                 }
-                $str_between = " AND tr_log_balance.date_created BETWEEN '" . $start_date . "' and '" . $end_date ."'";
+                $str_between = " AND tr_log_balance.date BETWEEN '" . $start_date . "' and '" . $end_date ."'";
 
                 $sWhere.= ' tr_log_balance.deleted = 0 ' . $str_between; 
             }
@@ -290,7 +294,7 @@ class Homepage extends MX_Controller {
                 }else{
                     $start_date = date("Y-m-d",strtotime($this->session->userdata('start_date_daily_balance')));
                 }
-                $str_between = " AND tr_log_balance.date_created BETWEEN '" . $start_date . "' and '" . $end_date ."'";
+                $str_between = " AND tr_log_balance.date BETWEEN '" . $start_date . "' and '" . $end_date ."'";
                 
                 $sWhere.= ' tr_log_balance.deleted = 0 ' . $str_between; 
             }
@@ -338,35 +342,49 @@ class Homepage extends MX_Controller {
             $draw = $dt['draw'];
             $data = array();
             if (!empty($rResult)) {
-                foreach ($rResult->result_array() as $aRow) {
+                foreach ($rResult->result_array() as $aRow) {                    
+                    // UPDATE DAILY REMAINING BALANCE
+                    $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $aRow['dep_rowID']);
+
+                    $use_balance = $this->homepage_model->get_use_balance($get_department->cash_gl_rowID, $aRow['date']);
+                    $get_daily_balance = $this->homepage_model->get_balance_get_by_date($get_department->rowID, $aRow['date']);
+                    if(count($get_daily_balance) > 0){
+                        $remaining_balance = $get_daily_balance->balance + $use_balance;
+                        $balance = array(
+                            'use_balance' => $use_balance,
+                            'remaining_balance' => $remaining_balance,
+                            'user_modified' => $this->session->userdata('user_id'),
+                            'date_modified' => date('Y-m-d'),
+                            'time_modified' => date('H:i:s')
+                        );
+                        $this->db->where('rowID', $get_daily_balance->rowID);
+                        $this->db->update('tr_log_balance', $balance);
+                    }
+                    
                     $dt['start'] ++;
                     $row = array();
 
                     $dropdown_option = "";
-                    if($aRow['date_created'] == date('Y-m-d')){
-                        $dropdown_option .= '<div class="btn-group">';
-                        $dropdown_option .= '<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">';
-                        $dropdown_option .= lang('options');
-                        $dropdown_option .= '<span class="caret"></span>';
-                        $dropdown_option .= '</button>';
-                        $dropdown_option .= '<ul class="dropdown-menu">';
+                    $dropdown_option .= '<div class="btn-group">';
+                    $dropdown_option .= '<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">';
+                    $dropdown_option .= lang('options');
+                    $dropdown_option .= '<span class="caret"></span>';
+                    $dropdown_option .= '</button>';
+                    $dropdown_option .= '<ul class="dropdown-menu">';
+                
+                    $dropdown_option .= '<li><a href="javascript:void()" title="'.lang('update_option').'" onclick="edit_balance('.$aRow['rowID'].')"><i class="fa fa-pencil"></i>  ' . lang('update_option') . '</a></li>';
                     
-                        $dropdown_option .= '<li><a href="javascript:void()" title="'.lang('update_option').'" onclick="edit_balance('.$aRow['rowID'].')"><i class="fa fa-pencil"></i>  ' . lang('update_option') . '</a></li>';
-                        
-                        $dropdown_option .= '</ul></div>';
-                    }
+                    $dropdown_option .= '</ul></div>';
               
-                    $get_department = $this->homepage_model->get_by_id($tabel = 'sa_dep', $aRow['dep_rowID']);
-
                     $row['dropdown_option'] = $dropdown_option;
-                    $row['date_created'] = date("d F Y",strtotime($aRow['date_created']));
+                    $row['date'] = date("d F Y",strtotime($aRow['date']));
                     $row['department'] = ucwords($get_department->dep_cd. ' - ' .$get_department->dep_name);
                     $row['balance'] = number_format($aRow['balance'],0,',','.');
                     $row['use_balance'] = number_format($aRow['use_balance'],0,',','.');
                     $row['remaining_balance'] = number_format($aRow['remaining_balance'],0,',','.');
 
-                    $row['start_date'] = $aRow['date_created'];
-                    $row['end_date'] = $aRow['date_created'];
+                    $row['start_date'] = $aRow['date'];
+                    $row['end_date'] = $aRow['date'];
                     $data[] = $row;
                 }
             }

@@ -75,6 +75,62 @@
 							<div class="row" style="padding-top: 10px;">
 								<div class="col-md-6" style="padding-top: 5px;">
 									<p>
+										<i class="fa fa-dollar font-blue"></i>
+										<span class="caption-subject font-blue sbold uppercase"><?=lang('remaining_balance')?></span>
+									</p>
+								</div>
+							</div>
+						</header>
+						<div class="clearfix"></div>
+						<br>
+						<!-- BEGIN PORTLET-->
+						<div class="panel panel-default">
+							<div class="panel-body form">
+								<!-- BEGIN TABLE-->
+								<div class="table-responsive">
+									<?php echo validation_errors(); ?>
+									<table id="tbl-remaining-balance" class="table table-striped table-hover b-t b-light text-sm">
+										<thead>
+											<tr>
+												<th><?=lang('no')?></th>
+												<th><?=lang('department')?> </th>
+												<th><?=lang('balance')?> </th>
+												<th><?=lang('use_balance')?> </th>
+												<th><?=lang('remaining_balance')?> </th>
+											</tr> 
+										</thead>
+										<tbody>
+											<?php
+											$no = 1;
+											foreach($data_log_balance as $row){
+												echo '
+													<tr>
+														<td align="center">'.$no++.'</td>
+														<td>'.$row['department_name'].'</td>
+														<td align="right">'.number_format($row['balance_total'],0,',','.').'</td>
+														<td align="right">'.number_format($row['use_balance_total'],0,',','.').'</td>
+														<td align="right">'.number_format($row['remaining_balance_total'],0,',','.').'</td>
+													</tr>
+												';
+											}
+											?>
+										</tbody>
+									</table>
+								</div>
+								<!-- END TABLE-->
+							</div>
+						</div>
+						<!-- END PORTLET-->
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<header class="header bg-white b-t b-light">
+							<br>
+							<div class="row" style="padding-top: 10px;">
+								<div class="col-md-6" style="padding-top: 5px;">
+									<p>
 										<i class="fa fa-money font-blue"></i>
 										<span class="caption-subject font-blue sbold uppercase"><?=lang('daily_balance')?></span>
 									</p>
@@ -100,7 +156,6 @@
 										<span class="input-group-addon" style="width: 50px;">to</span>
 										<input type="text" name="end_date" id="end_date" class="form-control input-sm end_date" placeholder="<?=lang('end_date')?>" value="<?=date('d-m-Y', strtotime($end_date))?>" style="text-align: center;">
 									</div>
-									<br><br>
 
 									<table id="tbl-daily-balance" class="table table-striped table-hover b-t b-light text-sm">
 										<thead>
@@ -137,6 +192,13 @@
 					<?=form_open('','autocomplete="off" id="form" class="form-horizontal"')?>
 						<input type="hidden" name="rowID" value="">
 
+						<div class="form-group form-md-line-input">
+							<label class="col-lg-4 control-label"><?=lang('date')?><span class="text-danger">*</span></label>
+							<div class="col-lg-3">
+								<input type="text" class="form-control text-center tanggal_datetimepicker" name="date" placeholder="Input <?=lang('date')?>" autocomplete="off" maxlength="10" required>
+							</div>
+						</div>		
+						
 						<div class="form-group form-md-line-input">
 							<label class="col-lg-4 control-label"><?=lang('balance')?><span class="text-danger">*</span></label>
 							<div class="col-lg-8">
@@ -196,7 +258,7 @@ $(function() {
                     "data": "dropdown_option", "orderable": false, "searchable": false
                 },
                 {
-                    "data": "date_created"
+                    "data": "date"
                 },
                 {
                     "data": "department"
