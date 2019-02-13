@@ -338,15 +338,20 @@
             </div>
             <br />
             <table>
-                <tr>
+                <!-- <tr>
                     <td><b>Invoice No</b></td>
                     <td>:</td>
                     <td><?=$get_data->trx_no?> <?=$get_data->tax == 0 ? '[TAX]' : '';//'NON TAX'?></td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td><b>Invoice Date</b></td>
                     <td>:</td>
                     <td><?=date("d F Y",strtotime($get_data->trx_date))?></td>
+                </tr>
+                <tr>
+                    <td><b>Customer</b></td>
+                    <td>:</td>
+                    <td><?=strtoupper($get_data->debtor_name)?></td>
                 </tr>
                 <tr>
                     <td><b>Invoice Type</b></td>
