@@ -123,9 +123,9 @@ class Homepage_model extends CI_Model
 	
     function get_log_balance_department()
 	{  
-        $sql = "SELECT a.dep_rowID as id, a.deleted, b.dep_name as name, b.cash_gl_rowID as gl_rowID, SUM(a.balance) as balance_total 
+        $sql = "SELECT a.dep_rowID as id, a.deleted, b.dep_cd as code, b.dep_name as name, b.cash_gl_rowID as gl_rowID, SUM(a.balance) as balance_total 
                 FROM tr_log_balance as a INNER JOIN sa_dep as b ON a.dep_rowID = b.rowID
-                GROUP BY id, a.deleted, name, gl_rowID
+                GROUP BY id, a.deleted, code, name, gl_rowID
                 HAVING a.deleted = 0 ORDER BY name";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0){

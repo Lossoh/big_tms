@@ -50,7 +50,7 @@ class Homepage extends MX_Controller {
             $use_balance_total = $this->homepage_model->get_log_use_balance_department_by_coa_id($row->gl_rowID);
             $remaining_balance_total = $row->balance_total + $use_balance_total;
             $data_log_balance_tmp = array(
-                'department_name' => $row->name,
+                'department_name' => $row->code . ' - ' . $row->name,
                 'balance_total' => $row->balance_total,
                 'use_balance_total' => $use_balance_total,
                 'remaining_balance_total' => $remaining_balance_total,

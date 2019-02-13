@@ -88,15 +88,14 @@
 							<div class="panel-body form">
 								<!-- BEGIN TABLE-->
 								<div class="table-responsive">
-									<?php echo validation_errors(); ?>
-									<table id="tbl-remaining-balance" class="table table-striped table-hover b-t b-light text-sm">
+									<table id="tbl-remaining-balance" class="table table-striped table-hover b-t b-light text-sm tbl-data">
 										<thead>
 											<tr>
-												<th><?=lang('no')?></th>
-												<th><?=lang('department')?> </th>
-												<th><?=lang('balance')?> </th>
-												<th><?=lang('use_balance')?> </th>
-												<th><?=lang('remaining_balance')?> </th>
+												<th class="text-center" width="7%"><?=lang('no')?></th>
+												<th class="text-center"><?=lang('department')?> </th>
+												<th class="text-center"><?=lang('balance')?> </th>
+												<th class="text-center"><?=lang('use_balance')?> </th>
+												<th class="text-center"><?=lang('remaining_balance')?> </th>
 											</tr> 
 										</thead>
 										<tbody>
@@ -160,12 +159,12 @@
 									<table id="tbl-daily-balance" class="table table-striped table-hover b-t b-light text-sm">
 										<thead>
 											<tr>
-												<th><?=lang('options')?></th>
-												<th><?=lang('date')?> </th>
-												<th><?=lang('department')?> </th>
-												<th><?=lang('balance')?> </th>
-												<th><?=lang('use_balance')?> </th>
-												<th><?=lang('remaining_balance')?> </th>
+												<th class="text-center" width="7%"><?=lang('options')?></th>
+												<th class="text-center"><?=lang('date')?> </th>
+												<th class="text-center"><?=lang('department')?> </th>
+												<th class="text-center"><?=lang('balance')?> </th>
+												<th class="text-center"><?=lang('use_balance')?> </th>
+												<th class="text-center"><?=lang('remaining_balance')?> </th>
 											</tr> 
 										</thead>
 									</table>
@@ -242,7 +241,7 @@ $(function() {
             format: 'DD-MM-YYYY',
             showTodayButton:true
         }); 
-        
+
         var table_daily_balance = $('#tbl-daily-balance').DataTable({
             processing: true,
             serverSide: true,
