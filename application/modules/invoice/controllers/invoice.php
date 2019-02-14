@@ -1564,9 +1564,9 @@ class Invoice extends MX_Controller
     function get_log_limited_printed($trx_no,$module)
 	{
         $sql = "SELECT * FROM activities 
-                WHERE user_rowID = ".$this->ci->session->userdata('user_id')." AND activity LIKE '%".$trx_no."%' AND module = '".$module."' 
+                WHERE user_rowID = ".$this->session->userdata('user_id')." AND activity LIKE '%".$trx_no."%' AND module = '".$module."' 
                         AND icon = 'fa-print' AND deleted = 0";
-        $query = $this->ci->db->query($sql);
+        $query = $this->db->query($sql);
 		if ($query->num_rows() > 0){
             return $query->num_rows();
 		} else{
