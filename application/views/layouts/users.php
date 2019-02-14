@@ -11995,7 +11995,7 @@ function add_invoice(){
   $('#choose_delivery').hide();  
   $('#delivery_order').hide();  
   $('#choose_invoice').prop("class","active");  
-  $('#invoice_detail').show();  
+//   $('#invoice_detail').show();  
   $('#cekDa').prop('disabled',false);
   $('#tamdetInvoice').show();  
   $('#invoice_type').attr('readonly',false);
@@ -13543,25 +13543,25 @@ function save_invoice(){
     }
     */
     
-    var x=1;
-    var totalrowx=totrowInvo+1;
-    for(x=1;x<totalrowx;x++){
-        if(document.getElementById('amount_invo'+x)!=null){
-            if(document.getElementById('amount_invo'+x).value!=""){
-                //var income      =  $('#income_rowId option:selected'+x).val();
-                var Remark      =  $('#invoice_remark'+x).val();
+    // var x=1;
+    // var totalrowx=totrowInvo+1;
+    // for(x=1;x<totalrowx;x++){
+    //     if(document.getElementById('amount_invo'+x)!=null){
+    //         if(document.getElementById('amount_invo'+x).value!=""){
+    //             //var income      =  $('#income_rowId option:selected'+x).val();
+    //             var Remark      =  $('#invoice_remark'+x).val();
                 
-                //var data3=cekValidasiDetail(income,' Income Name',x)
-                var data4=cekValidasiDetail(Remark,'Description ',x)
+    //             //var data3=cekValidasiDetail(income,' Income Name',x)
+    //             var data4=cekValidasiDetail(Remark,'Description ',x)
                 
-                validasi=validasi+data4;
-            }else{
-                sweetAlert('Column contents Incomplete!');
-                return false;
-            }
+    //             validasi=validasi+data4;
+    //         }else{
+    //             sweetAlert('Column contents Incomplete!');
+    //             return false;
+    //         }
             
-        }
-    }
+    //     }
+    // }
     
     if(validasi!=""){
         sweetAlert('<?=lang('information')?>',''+validasi);

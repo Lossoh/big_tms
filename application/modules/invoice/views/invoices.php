@@ -213,7 +213,7 @@
             <p>&nbsp;</p> 
              <ul class="nav nav-tabs">
                 <li id="choose_delivery" class="active"><a data-toggle="tab" href="#delivery_order">JO Details</a></li>
-                <li id="choose_invoice"><a data-toggle="tab" href="#invoice_detail"><?=lang('invoice_details') ?></a></li>
+                <!-- <li id="choose_invoice"><a data-toggle="tab" href="#invoice_detail"><?=lang('invoice_details') ?></a></li> -->
              </ul>
              <div class="tab-content">
                 <div id="delivery_order" class="tab-pane">  
