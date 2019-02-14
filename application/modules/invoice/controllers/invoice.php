@@ -363,19 +363,19 @@ class Invoice extends MX_Controller
             $result = $this->invoice_model->simpan_data_header_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$dataPost);
             $rowID = $this->db->insert_id();
             if ($result){
-                if (!empty($dataPost['detailInvoice'])){
-                    $x=0;
-                    foreach ($dataPost['detailInvoice'] as $detInvo){
-                        $x++;
-                        $result= $this->invoice_model->simpan_data_detail_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$x,$dataPost,$detInvo);
-                        if (!$result){
-                            $error = true;
-                            break;
-                        }else{
-                            $error = false;
-                        }
-                    }
-                }
+                // if (!empty($dataPost['detailInvoice'])){
+                //     $x=0;
+                //     foreach ($dataPost['detailInvoice'] as $detInvo){
+                //         $x++;
+                //         $result= $this->invoice_model->simpan_data_detail_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$x,$dataPost,$detInvo);
+                //         if (!$result){
+                //             $error = true;
+                //             break;
+                //         }else{
+                //             $error = false;
+                //         }
+                //     }
+                // }
                 
                 if ($error == false)
                 {  
@@ -486,21 +486,21 @@ class Invoice extends MX_Controller
                         // insert GL Detail Piutang
                         $result = $this->invoice_model->simpanGlDetailPiutang($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_receivable_RowID,$dataPost);
                          if ($result){
-                             $x = 1;
-                             if (!empty($dataPost['detailInvoice']['amountWth'])){
-                                 foreach($dataPost['detailInvoice'] as $detailPPH){
-                                    $x++;
-                                    $coa_wth_rowID=$this->appmodel->get_id($table = 'sa_wth_rate', $array = array('deleted' => 0, 'rowID'=>(isset($detailPPH['cmbWth'])) ? $detailPPH['cmbWth'] : 0), 'wth_coa_rowID'); 
-                                    $result = $this->invoice_model->simpanGlDetailPPH($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_wth_rowID,$x,$dataPost,$detailPPH);
-                                    
-                                    if(!$result){
-                                        $error = true;
-                                        break;
-                                    }else{
-                                        $error = false;
-                                    }
-                                 }
-                             }
+                            $x = 1;
+                            // if (!empty($dataPost['detailInvoice']['amountWth'])){
+                            //     foreach($dataPost['detailInvoice'] as $detailPPH){
+                            //     $x++;
+                            //     $coa_wth_rowID=$this->appmodel->get_id($table = 'sa_wth_rate', $array = array('deleted' => 0, 'rowID'=>(isset($detailPPH['cmbWth'])) ? $detailPPH['cmbWth'] : 0), 'wth_coa_rowID'); 
+                            //     $result = $this->invoice_model->simpanGlDetailPPH($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_wth_rowID,$x,$dataPost,$detailPPH);
+                                
+                            //     if(!$result){
+                            //         $error = true;
+                            //         break;
+                            //     }else{
+                            //         $error = false;
+                            //     }
+                            //     }
+                            // }
                          }else{
                             $error = true;  
                          }
@@ -514,17 +514,17 @@ class Invoice extends MX_Controller
             
             if ($error == false){
                 $y = $x;
-                foreach($dataPost['detailInvoice'] as $detK_income){
-                    $y++;
-                    $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
-                    $result = $this->invoice_model->simpanGlDetailIncome($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$y,$dataPost,$detK_income);
-                    if (!$result){
-                        $error = true;
-                        break;  
-                    }else{
-                        $error = false;
-                    }    
-                }
+                // foreach($dataPost['detailInvoice'] as $detK_income){
+                //     $y++;
+                //     $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
+                //     $result = $this->invoice_model->simpanGlDetailIncome($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$y,$dataPost,$detK_income);
+                //     if (!$result){
+                //         $error = true;
+                //         break;  
+                //     }else{
+                //         $error = false;
+                //     }    
+                // }
                 
             }else{
                 $error = true;
@@ -533,24 +533,24 @@ class Invoice extends MX_Controller
             if ($error == false){
                 $z = $y;
                 
-                foreach ( $dataPost['detailInvoice'] as $detK_PPN ){
-                    $z++;
-                    $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
-                    $ppn_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_PPN['income_rowId']), 'vat_coa_rowID');
-                    if(empty($detK_PPN['cekTax'])){
-                        $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$z,$dataPost,$detK_PPN);
-                    }
-                    else{
-                        $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$ppn_coa_rowID,$z,$dataPost,$detK_PPN);
-                    }
+                // foreach ( $dataPost['detailInvoice'] as $detK_PPN ){
+                //     $z++;
+                //     $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
+                //     $ppn_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_PPN['income_rowId']), 'vat_coa_rowID');
+                //     if(empty($detK_PPN['cekTax'])){
+                //         $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$z,$dataPost,$detK_PPN);
+                //     }
+                //     else{
+                //         $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$ppn_coa_rowID,$z,$dataPost,$detK_PPN);
+                //     }
                     
-                    if (!$result) {
-                        $error = true;
-                        break;
-                    }else{
-                        $error = false;
-                    }   
-                }
+                //     if (!$result) {
+                //         $error = true;
+                //         break;
+                //     }else{
+                //         $error = false;
+                //     }   
+                // }
                 
             }else{
                 $error = true;
@@ -644,19 +644,19 @@ class Invoice extends MX_Controller
             $result = $this->invoice_model->simpan_data_header_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$dataPost);
             $rowID = $this->db->insert_id();
             if ($result){
-                if (!empty($dataPost['detailInvoice'])){
-                    $x=0;
-                    foreach ($dataPost['detailInvoice'] as $detInvo){
-                        $x++;
-                        $result= $this->invoice_model->simpan_data_detail_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$x,$dataPost,$detInvo);
-                        if (!$result){
-                            $error = true;
-                            break;
-                        }else{
-                            $error = false;
-                        }
-                    }
-                }
+                // if (!empty($dataPost['detailInvoice'])){
+                //     $x=0;
+                //     foreach ($dataPost['detailInvoice'] as $detInvo){
+                //         $x++;
+                //         $result= $this->invoice_model->simpan_data_detail_invoice($sa_spec_prefix,$alloc_code,$alloc_no,$x,$dataPost,$detInvo);
+                //         if (!$result){
+                //             $error = true;
+                //             break;
+                //         }else{
+                //             $error = false;
+                //         }
+                //     }
+                // }
                 
                 if ($error == false)
                 {  
@@ -801,21 +801,21 @@ class Invoice extends MX_Controller
                     // insert GL Detail Piutang
                     $result = $this->invoice_model->simpanGlDetailPiutang($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_receivable_RowID,$dataPost);
                      if ($result){
-                         $x = 1;
-                         if (!empty($dataPost['detailInvoice']['amountWth'])){
-                             foreach($dataPost['detailInvoice'] as $detailPPH){
-                                $x++;
-                                $coa_wth_rowID=$this->appmodel->get_id($table = 'sa_wth_rate', $array = array('deleted' => 0, 'rowID'=>(isset($detailPPH['cmbWth'])) ? $detailPPH['cmbWth'] : 0), 'wth_coa_rowID'); 
-                                $result = $this->invoice_model->simpanGlDetailPPH($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_wth_rowID,$x,$dataPost,$detailPPH);
-                                
-                                if(!$result){
-                                    $error = true;
-                                    break;
-                                }else{
-                                    $error = false;
-                                }
-                             }
-                         }
+                        $x = 1;
+                        // if (!empty($dataPost['detailInvoice']['amountWth'])){
+                        //     foreach($dataPost['detailInvoice'] as $detailPPH){
+                        //     $x++;
+                        //     $coa_wth_rowID=$this->appmodel->get_id($table = 'sa_wth_rate', $array = array('deleted' => 0, 'rowID'=>(isset($detailPPH['cmbWth'])) ? $detailPPH['cmbWth'] : 0), 'wth_coa_rowID'); 
+                        //     $result = $this->invoice_model->simpanGlDetailPPH($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$coa_wth_rowID,$x,$dataPost,$detailPPH);
+                            
+                        //     if(!$result){
+                        //         $error = true;
+                        //         break;
+                        //     }else{
+                        //         $error = false;
+                        //     }
+                        //     }
+                        // }
                      }else{
                         $error = true;  
                      }
@@ -829,17 +829,17 @@ class Invoice extends MX_Controller
         
         if ($error == false){
             $y = $x;
-            foreach($dataPost['detailInvoice'] as $detK_income){
-                $y++;
-                $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
-                $result = $this->invoice_model->simpanGlDetailIncome($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$y,$dataPost,$detK_income);
-                if (!$result){
-                    $error = true;
-                    break;  
-                }else{
-                    $error = false;
-                }    
-            }
+            // foreach($dataPost['detailInvoice'] as $detK_income){
+            //     $y++;
+            //     $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
+            //     $result = $this->invoice_model->simpanGlDetailIncome($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$y,$dataPost,$detK_income);
+            //     if (!$result){
+            //         $error = true;
+            //         break;  
+            //     }else{
+            //         $error = false;
+            //     }    
+            // }
             
         }else{
             $error = true;
@@ -848,24 +848,24 @@ class Invoice extends MX_Controller
         if ($error == false){
             $z = $y;
             
-            foreach ( $dataPost['detailInvoice'] as $detK_PPN ){
-                $z++;
-                $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
-                $ppn_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_PPN['income_rowId']), 'vat_coa_rowID');
-                if(empty($detK_PPN['cekTax'])){
-                    $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$z,$dataPost,$detK_PPN);
-                }
-                else{
-                    $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$ppn_coa_rowID,$z,$dataPost,$detK_PPN);
-                }
+            // foreach ( $dataPost['detailInvoice'] as $detK_PPN ){
+            //     $z++;
+            //     $income_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_income['income_rowId']), 'income_coa_rowID');
+            //     $ppn_coa_rowID=$this->appmodel->get_id($table = 'sa_income', $array = array('deleted' => 0, 'rowID'=>$detK_PPN['income_rowId']), 'vat_coa_rowID');
+            //     if(empty($detK_PPN['cekTax'])){
+            //         $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$income_coa_rowID,$z,$dataPost,$detK_PPN);
+            //     }
+            //     else{
+            //         $result = $this->invoice_model->simpanGlDetailPPN($sa_spec_prefix_gl,$new_gl_coa_code,$gl_coa_no,$sa_spec_prefix,$alloc_code,$alloc_no,$ppn_coa_rowID,$z,$dataPost,$detK_PPN);
+            //     }
                 
-                if (!$result) {
-                    $error = true;
-                    break;
-                }else{
-                    $error = false;
-                }   
-            }
+            //     if (!$result) {
+            //         $error = true;
+            //         break;
+            //     }else{
+            //         $error = false;
+            //     }   
+            // }
             
         }else{
             $error = true;
