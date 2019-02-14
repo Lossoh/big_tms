@@ -36,7 +36,7 @@
 	background-color:#FFFFFF;
 	} 
 </style>
-
+<!-- 
 <table width="100%" cellpadding="2" cellspacing="0">
     <tr>
         <td width="64%">
@@ -321,11 +321,11 @@
             MANAJER KEUANGAN
         </td>
 	</tr>
-</table>
+</table> -->
 
 <!--<h6 id="footer">Print Date Time : <?=date('d F Y H:i:s')?></h6>-->
 
-<div class="deliveryOrder"></div>
+<!-- <div class="deliveryOrder"></div> -->
 
 <table width="100%" cellpadding="2" cellspacing="0">
     <tr>
