@@ -340,11 +340,11 @@ if(count($drivers) > 0){
 
 <?php
             if($no < $jumlah_driver){
-                //echo '<div class="new_page"></div>';
+                echo '<div class="new_page"></div>';
                 
-                echo '<br/><br/><br/>
-                        <hr style="border: dotted 1px #000;">
-                        <br/><br/>';
+                // echo '<br/><br/><br/>
+                //         <hr style="border: dotted 1px #000;">
+                //         <br/><br/>';
                 
                 $no++;
             }
