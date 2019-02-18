@@ -16,27 +16,27 @@ class invoice_model extends CI_Model
                 $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
             }
             */
-            
-            $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
-            
-            $year = date('Y',strtotime($invoice_date));
-            $month = date('m',strtotime($invoice_date));
-    
-            if(isset($dataPost['cekDa_tmp'])){
-                $cekDa_tmp = 1;
+                
+            if(isset($dataPost['cekDa'])){
+                $cekDa = 1;
                 $base_amt = str_replace('.','',$dataPost['TotalBase']);
                 $tax_amt = 0;
-                $total_amt = str_replace('.','',$dataPost['GrandTotal']);
-                $bal_amt = str_replace('.','',$dataPost['GrandTotal']);
+                $total_amt = str_replace('.','',$dataPost['TotalBase']);
+                $bal_amt = str_replace('.','',$dataPost['TotalBase']);
             }
             else{
-                $cekDa_tmp = 0;
+                $cekDa = 0;
                 $base_amt = str_replace('.','',$dataPost['TotalBase']);
                 $tax_amt = str_replace('.','',$dataPost['TotalVat']);
                 $total_amt = str_replace('.','',$dataPost['GrandTotal']);
                 $bal_amt = str_replace('.','',$dataPost['GrandTotal']);
             }
 
+            $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
+            
+            $year = date('Y',strtotime($invoice_date));
+            $month = date('m',strtotime($invoice_date));
+    
             $data= array(
                 'prefix' =>$sa_spec_prefix,
                 'year'   =>$year,
@@ -54,7 +54,7 @@ class invoice_model extends CI_Model
                 'invoice_type' =>$dataPost['invoice_type'],
                 'descs'        => ucfirst($dataPost['invoice_remark_header']),
                 'wholesale'    => (isset($dataPost['wholesale'])) ? $dataPost['wholesale'] : 0,
-                'tax'          => $cekDa_tmp,
+                'tax'          => $cekDa,
                 'tr_jo_trx_hdr_year' => (isset($dataPost['jo_year'])) ? $dataPost['jo_year'] : 0,
                 'tr_jo_trx_hdr_month' => (isset($dataPost['jo_month'])) ? $dataPost['jo_month'] : 0,
                 'tr_jo_trx_hdr_code'  => (isset($dataPost['jo_code'])) ? $dataPost['jo_code'] : 0,
@@ -71,24 +71,25 @@ class invoice_model extends CI_Model
     	    $result = $this->db->insert('ar_trx_hdr', $data);
         }
         else{
+                
+            if(isset($dataPost['cekDa'])){
+                $cekDa = 1;
+                $base_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $tax_amt = 0;
+                $total_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $bal_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+            }
+            else{
+                $cekDa = 0;
+                $base_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $tax_amt = ($base_amt * 10) / 100;
+                $total_amt = $base_amt + $tax_amt;
+                $bal_amt = $base_amt + $tax_amt;
+            }
+
             $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
             $year = date('Y',strtotime($invoice_date));
             $month = date('m',strtotime($invoice_date));
-    
-            if(isset($dataPost['cekDa_tmp'])){
-                $cekDa_tmp = 1;
-                $base_amt = str_replace('.','',$dataPost['TotalBase']);
-                $tax_amt = 0;
-                $total_amt = str_replace('.','',$dataPost['GrandTotal']);
-                $bal_amt = str_replace('.','',$dataPost['GrandTotal']);
-            }
-            else{
-                $cekDa_tmp = 0;
-                $base_amt = str_replace('.','',$dataPost['TotalBase']);
-                $tax_amt = str_replace('.','',$dataPost['TotalVat']);
-                $total_amt = str_replace('.','',$dataPost['GrandTotal']);
-                $bal_amt = str_replace('.','',$dataPost['GrandTotal']);
-            }
 
             $data= array(
                 'prefix' =>$sa_spec_prefix,
@@ -107,7 +108,7 @@ class invoice_model extends CI_Model
                 'invoice_type' =>$dataPost['invoice_type'],
                 'descs'        => ucfirst($dataPost['invoice_remark_header']),
                 'wholesale'    => (isset($dataPost['wholesale'])) ? $dataPost['wholesale'] : 0,
-                'tax'          => $cekDa_tmp,
+                'tax'          => $cekDa,
                 'tr_jo_trx_hdr_year' => (isset($dataPost['jo_year'])) ? $dataPost['jo_year'] : 0,
                 'tr_jo_trx_hdr_month' => (isset($dataPost['jo_month'])) ? $dataPost['jo_month'] : 0,
                 'tr_jo_trx_hdr_code'  => (isset($dataPost['jo_code'])) ? $dataPost['jo_code'] : 0,

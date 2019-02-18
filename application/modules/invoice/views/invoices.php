@@ -203,8 +203,7 @@
 							<div class="col-md-4"></div>
 							<div class="col-md-1"></div>
 							<div class="col-md-6"><p>										
-                                <div style="display: none;"><input type="checkbox" name="cekDa" id="cekDa" value="1" /> &nbsp;Non Tax</div>
-                                <input type="checkbox" name="cekDa_tmp" id="cekDa_tmp" value="1" /> &nbsp;Non Tax
+                                <input type="checkbox" name="cekDa" id="cekDa" value="1" /> &nbsp;Non Tax
 							</p></div>
 						</div>
 						
@@ -263,6 +262,7 @@
                             <div class="input-group">
                               <span class="input-group-addon" id="basic-addon1">Rp</span>
                               <input type="text"  name="TotalBase" id="TotalBase" value="0" readonly="" class="form-control" style='text-align:right;font-size:15px;font-weight:600;color: black;height:30px;background-color:white;border:solid 1px #ccc;' />
+                              <input type="hidden"  name="TotalBaseTmp" id="TotalBaseTmp"/>
                             </div>
         				</div>
                     </div>
@@ -271,7 +271,8 @@
 						<div class="col-md-2">
                             <div class="input-group">
                               <span class="input-group-addon" id="basic-addon1">Rp</span>
-                              <input type="text"  name="TotalVat" id="TotalVat" value="0" readonly="" class="form-control" style='text-align:right;font-size:15px;font-weight:600;color: black;height:30px;background-color:white;border:solid 1px #ccc;' />     
+                              <input type="text"  name="TotalVat" id="TotalVat" value="0" readonly="" class="form-control" style='text-align:right;font-size:15px;font-weight:600;color: black;height:30px;background-color:white;border:solid 1px #ccc;' />    
+                              <input type="hidden"  name="TotalVatTmp" id="TotalVatTmp"/>
                             </div>
                         </div>
                     </div>
@@ -287,6 +288,7 @@
                             <div class="input-group">
                               <span class="input-group-addon" id="basic-addon1">Rp</span>
                               <input type="text"  name="GrandTotal" id="GrandTotal" value="0" readonly="" class="form-control" style='text-align:right;font-size:15px;font-weight:600;color: black;height:30px;background-color:white;border:solid 1px #ccc;' />
+                              <input type="hidden"  name="GrandTotalTmp" id="GrandTotalTmp"/>
                             </div>
                         </div>
                     </div>

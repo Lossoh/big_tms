@@ -12034,7 +12034,7 @@ $("#choose_delivery").click(function(){
 
 $("#choose_invoice").click(function(){
     $('#delivery_order').hide();  
-    $('#invoice_detail').show();      
+    // $('#invoice_detail').show();      
     $('#choose_delivery').prop("class","");  
 });
 
@@ -12071,7 +12071,7 @@ $("#invoice_type").change(function(){
       
       $('#choose_delivery').hide();  
       $('#delivery_order').hide();  
-      $('#invoice_detail').show();  
+    //   $('#invoice_detail').show();  
       $('#choose_delivery').prop("class",""); 
       $('#choose_invoice').prop("class","active"); 
       
@@ -12315,6 +12315,9 @@ function edit_invoice(prefix,year,month,code){
               
               showDetailInvoice(data.prefix,data.year,data.month,data.code,'edit');    
               
+              $('#TotalBaseTmp').val(data.base_amt);
+              $('#TotalVatTmp').val(data.tax_amt);
+              $('#GrandTotalTmp').val(data.total_amt);
               
               if (data.invoice_type == 'A'){
                 $('#choose_delivery').show();  
@@ -12663,7 +12666,7 @@ $.ajax({
              $('#TotalVat').val(number_format(totVat,0,',','.','format'));
              //$('#TotalWth').val(number_format(totWth,0,',','.','format'));
              $('#GrandTotal').val(number_format(totTal,0,',','.','format'));
-             
+
         }
             
    });
