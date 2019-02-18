@@ -13215,7 +13215,7 @@ function ceklist(x){
      var cekda = document.getElementById('cekTax'+x).checked;
     if ( cekda == true){
         var amount      = parseInt(number_format(document.getElementById('amount_invo'+x).value,0,',','.','deformat'));
-        var amount_base =  Math.round(amount / 1.1);;
+        var amount_base =  Math.round(amount / 1.1);
         //alert(amount_base);
         var amount_vat  = amount - amount_base;
         var subTot = amount_base + amount_vat;
@@ -13262,8 +13262,8 @@ function ceklist(x){
         
     }else{
         var amount      = parseInt(number_format(document.getElementById('amount_invo'+x).value,0,',','.','deformat'));
-        var amount_vat  = Math.round(amount * 0.1);;
-        var subTot      = amount + amount_vat
+        var amount_vat  = Math.round(amount * 0.1);
+        var subTot      = amount + amount_vat;
         document.getElementById('amount_base'+x).value=number_format(amount,0,',','.','format');
         document.getElementById('amount_vat'+x).value=number_format(amount_vat,0,',','.','format');
         document.getElementById('SubTotal'+x).value=number_format(subTot,0,',','.','format');
@@ -13314,7 +13314,7 @@ function autoTax(x){
     if (cekda == true){
         
         var amount      = parseInt(number_format(document.getElementById('amount_invo'+x).value,0,',','.','deformat'));
-        var amount_base =  Math.round(amount / 1.1);;
+        var amount_base =  Math.round(amount / 1.1);
         //alert(amount_base);
         var amount_vat  = amount - amount_base;
         var subTot = amount_base + amount_vat;
@@ -13421,7 +13421,7 @@ function autoTax(x){
             
         }else{
             var amount      = parseInt(number_format(document.getElementById('amount_invo'+x).value,0,',','.','deformat'));
-            var amount_vat  = Math.round(amount * 0.1);;
+            var amount_vat  = Math.round(amount * 0.1);
             var subTot      = amount + amount_vat;
             document.getElementById('amount_base'+x).value=number_format(amount,0,',','.','format');
             document.getElementById('amount_vat'+x).value=number_format(amount_vat,0,',','.','format');
@@ -18487,7 +18487,7 @@ function add_gl_detail(){
     
     var data1=cekValidasi(gl_date,'GL Date','<?=lang('not_empty')?>');
     var data2=cekValidasi(gl_type,'GL Type','<?=lang('not_empty')?>');
-    var data3=cekValidasi(reference_no,'Reference No','<?=lang('not_empty')?>');;
+    var data3=cekValidasi(reference_no,'Reference No','<?=lang('not_empty')?>');
     var data4=cekValidasi(gl_remark,'Remark','<?=lang('not_empty')?>');
 
     validasi=data1+data2+data3+data4;
@@ -18730,7 +18730,7 @@ function save_general_ledger(){
     
     var data1=cekValidasi(gl_date,'GL Date','<?=lang('not_empty')?>');
     var data2=cekValidasi(gl_type,'GL Type','<?=lang('not_empty')?>');
-    var data3=cekValidasi(reference_no,'Reference No','<?=lang('not_empty')?>');;
+    var data3=cekValidasi(reference_no,'Reference No','<?=lang('not_empty')?>');
     var data4=cekValidasi(gl_remark,'Remark','<?=lang('not_empty')?>');
     
     for(y=1;y<looprows; y++){  

@@ -301,11 +301,11 @@ class Realizations extends MX_Controller
                 $max_percent_realization = $this->config->item('max_percent_realization') / 100;
                 $max_cash_advance_alloc = $cash_advance_amt + ($cash_advance_amt * $max_percent_realization);
                 
-                if($cash_advance_alloc > $max_cash_advance_alloc){
-                    echo json_encode(array('success' => false, 'msg' => "Realization total exceeds maximum [Rp ".number_format($max_cash_advance_alloc,0,',','.')."] !"));
-                    exit();
-                }
-                else{
+                // if($cash_advance_alloc > $max_cash_advance_alloc){
+                //     echo json_encode(array('success' => false, 'msg' => "Realization total exceeds maximum [Rp ".number_format($max_cash_advance_alloc,0,',','.')."] !"));
+                //     exit();
+                // }
+                // else{
                     // Proses delete seluruh data berdasarkan alloc no 
                     $result = $this->realizations_model->delete_cash_advance_alloc($alloc_no);
                     if($result){
@@ -539,7 +539,7 @@ class Realizations extends MX_Controller
                     }
                     
                     return $status;
-                }
+                // }
             }
             else{
                 echo json_encode(array('success' => false, 'msg' => "Data in other realization process!"));

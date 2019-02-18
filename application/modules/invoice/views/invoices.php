@@ -203,7 +203,8 @@
 							<div class="col-md-4"></div>
 							<div class="col-md-1"></div>
 							<div class="col-md-6"><p>										
-                                <input type="checkbox" name="cekDa" id="cekDa" value="1" /> &nbsp;Non Tax
+                                <div style="display: none;"><input type="checkbox" name="cekDa" id="cekDa" value="1" /> &nbsp;Non Tax</div>
+                                <input type="checkbox" name="cekDa_tmp" id="cekDa_tmp" value="1" /> &nbsp;Non Tax
 							</p></div>
 						</div>
 						
