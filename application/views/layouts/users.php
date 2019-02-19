@@ -12115,7 +12115,7 @@ $("#invoice_type").change(function(){
       $('#tamdet').hide();
       bersihDO_AP();
             
-      autoTax("1");
+    //   autoTax("1");
   }
     
 });
@@ -12338,7 +12338,7 @@ function edit_invoice(prefix,year,month,code){
                     success: function(data){				
                         $('#data_do').html(data);      
                         set_amount_inv();
-                        autoTax("1");
+                        // autoTax("1");
                     },
         			error: function(xhr, status, error) {
         				document.write(xhr.responseText);
@@ -12403,7 +12403,7 @@ function edit_invoice(prefix,year,month,code){
                     success: function(data){				
                         $('#data_do').html(data);   
                         set_amount_inv();
-                        autoTax("1");
+                        // autoTax("1");
                     },
                     error: function(xhr, status, error) {
                     	document.write(xhr.responseText);
@@ -12510,7 +12510,7 @@ function delete_invoice(prefix,year,month,code){
                             $('#data_do').html(data);      
                             set_amount_inv();
                             btn_delete_do();
-                            autoTax("1");
+                            // autoTax("1");
                         },
             			error: function(xhr, status, error) {
             				document.write(xhr.responseText);
@@ -12573,7 +12573,7 @@ function delete_invoice(prefix,year,month,code){
                         $('#data_do').html(data);   
                         set_amount_inv();
                         btn_delete_do();
-                        autoTax("1");
+                        // autoTax("1");
                     },
                     error: function(xhr, status, error) {
                     	document.write(xhr.responseText);
@@ -12775,7 +12775,7 @@ function ambil_job_order(){
             success: function(data){				
                 $('#data_do').html(data);      
                 set_amount_inv();
-                autoTax("1");
+                // autoTax("1");
             },
 			error: function(xhr, status, error) {
 				document.write(xhr.responseText);
@@ -12889,7 +12889,7 @@ function ambil_ap(){
             success: function(data){				
                 $('#data_do').html(data);      
                 set_amount_inv();
-                autoTax("1");
+                // autoTax("1");
             },
 			error: function(xhr, status, error) {
 				document.write(xhr.responseText);
@@ -12932,7 +12932,7 @@ function ambil_ap_old(){
                 $('#hapdetInvoice1').hide();   
                 $('#amount_invo1').val(tandaPemisahTitik(data.total_ap));   
                 
-                autoTax("1");
+                // autoTax("1");
             },
 			error: function(xhr, status, error) {
 				document.write(xhr.responseText);
@@ -13079,10 +13079,10 @@ function recalculationDO(){
         }
     }
     
-    $('#amount_invo1').val(tandaPemisahTitik(total_price_amount));      
-    $('#amount_invo1').prop('readonly',true);   
-    $('#hapdetInvoice1').hide();         
-    autoTax("1");
+    // $('#amount_invo1').val(tandaPemisahTitik(total_price_amount));      
+    // $('#amount_invo1').prop('readonly',true);   
+    // $('#hapdetInvoice1').hide();         
+    // autoTax("1");
                 
     $('#total_qty').val(number_format(total_qty,0,',','.','format'));
     $('#total_price').val(number_format(total_price,0,',','.','format'));
@@ -15828,7 +15828,7 @@ function sumAmountAP_For_Invoice(){
     }
     
     $('#amount_invo1').val(tandaPemisahTitik(totNil));   
-    autoTax("1");
+    // autoTax("1");
     
 }
 

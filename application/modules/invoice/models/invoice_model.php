@@ -74,14 +74,14 @@ class invoice_model extends CI_Model
                 
             if(isset($dataPost['cekDa'])){
                 $cekDa = 1;
-                $base_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $base_amt = str_replace('.','',$dataPost['total_price_amount']);
                 $tax_amt = 0;
-                $total_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
-                $bal_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $total_amt = str_replace('.','',$dataPost['total_price_amount']);
+                $bal_amt = str_replace('.','',$dataPost['total_price_amount']);
             }
             else{
                 $cekDa = 0;
-                $base_amt = str_replace('.','',$dataPost['TotalBaseTmp']);
+                $base_amt = str_replace('.','',$dataPost['total_price_amount']);
                 $tax_amt = ($base_amt * 10) / 100;
                 $total_amt = $base_amt + $tax_amt;
                 $bal_amt = $base_amt + $tax_amt;
