@@ -1560,7 +1560,7 @@ class Invoice extends MX_Controller
         }
         
     }
-       
+    
     function get_log_limited_printed($trx_no,$module)
 	{
         $sql = "SELECT * FROM activities 
