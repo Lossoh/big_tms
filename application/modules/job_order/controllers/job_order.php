@@ -764,11 +764,11 @@ class job_order extends MX_Controller {
             $dt['id'] = 'year';
 
             $aColumnTable = array(
-                'tr_jo_trx_hdr.year', 'tr_jo_trx_hdr.jo_no', 'tr_jo_trx_hdr.jo_date', 'sa_debtor.debtor_cd', 'tr_jo_trx_hdr.po_spk_no', 'tr_jo_trx_hdr.so_no', 'tr_jo_trx_hdr.vessel_no', 'sa_port.port_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_item.item_name', 'tr_jo_trx_hdr.status', 'sa_debtor.debtor_name', 'tr_jo_trx_hdr.vessel_name', 'sa_port.port_name', 'tr_jo_trx_hdr.invoice_no', 'tr_jo_trx_hdr.code', 'tr_jo_trx_hdr.month'
+                'tr_jo_trx_hdr.year', 'tr_jo_trx_hdr.jo_no', 'tr_jo_trx_hdr.jo_date', 'sa_debtor.debtor_cd', 'tr_jo_trx_hdr.po_spk_no', 'tr_jo_trx_hdr.so_no', 'tr_jo_trx_hdr.vessel_no', 'sa_port.port_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_item.item_name', 'tr_jo_trx_hdr.status', 'sa_debtor.debtor_name', 'tr_jo_trx_hdr.vessel_name', 'sa_port.port_name', 'tr_jo_trx_hdr.invoice_no', 'tr_jo_trx_hdr.code', 'tr_jo_trx_hdr.month', 'tr_jo_trx_hdr.price_amount'
             );
 
             $aColumns = array(
-                'tr_jo_trx_hdr.year', 'tr_jo_trx_hdr.jo_no', 'tr_jo_trx_hdr.jo_date', 'sa_debtor.debtor_cd', 'tr_jo_trx_hdr.po_spk_no', 'tr_jo_trx_hdr.so_no', 'tr_jo_trx_hdr.vessel_no', 'sa_port.port_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_item.item_name', 'tr_jo_trx_hdr.status', 'sa_debtor.debtor_name', 'tr_jo_trx_hdr.vessel_name', 'sa_port.port_name', 'tr_jo_trx_hdr.invoice_no', 'tr_jo_trx_hdr.code', 'tr_jo_trx_hdr.month'
+                'tr_jo_trx_hdr.year', 'tr_jo_trx_hdr.jo_no', 'tr_jo_trx_hdr.jo_date', 'sa_debtor.debtor_cd', 'tr_jo_trx_hdr.po_spk_no', 'tr_jo_trx_hdr.so_no', 'tr_jo_trx_hdr.vessel_no', 'sa_port.port_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_fare_trip_hdr.fare_trip_cd', 'sa_item.item_name', 'tr_jo_trx_hdr.status', 'sa_debtor.debtor_name', 'tr_jo_trx_hdr.vessel_name', 'sa_port.port_name', 'tr_jo_trx_hdr.invoice_no', 'tr_jo_trx_hdr.code', 'tr_jo_trx_hdr.month', 'tr_jo_trx_hdr.price_amount'
             );
 
             $groupBy = '';
@@ -805,14 +805,14 @@ class job_order extends MX_Controller {
                 }
             }
 
-            if (!empty($dt['columns'][11]['search']['value'])) {
+            if (!empty($dt['columns'][12]['search']['value'])) {
                 if ($sWhere == "") {
                     $sWhere = " WHERE ";
                 } else {
                     $sWhere .= " AND ";
                 }
 
-                $start_date = date('Y-m-d', strtotime($dt['columns'][11]['search']['value']));
+                $start_date = date('Y-m-d', strtotime($dt['columns'][12]['search']['value']));
                 $this->session->set_userdata('start_date_job_order',date("Y-m-d",strtotime($start_date)));
 
                 if($this->session->userdata('end_date_job_order') == ''){
@@ -825,14 +825,14 @@ class job_order extends MX_Controller {
                 $sWhere.= ' tr_jo_trx_hdr.deleted = 0 ' . $str_between; 
             }
 
-            if (!empty($dt['columns'][12]['search']['value'])) {
+            if (!empty($dt['columns'][13]['search']['value'])) {
                 if ($sWhere == "") {
                     $sWhere = " WHERE ";
                 } else {
                     $sWhere .= " AND ";
                 }
 
-                $end_date = date('Y-m-d', strtotime($dt['columns'][12]['search']['value']));
+                $end_date = date('Y-m-d', strtotime($dt['columns'][13]['search']['value']));
                 $this->session->set_userdata('end_date_job_order', date("Y-m-d",strtotime($end_date)));
 
                 if($this->session->userdata('start_date_job_order') == ''){
@@ -945,6 +945,7 @@ class job_order extends MX_Controller {
                     $row['port'] = $aRow['port_cd'] . ' - ' . $aRow['port_name'];
                     $row['fare_trip_cd'] = $aRow['fare_trip_cd'];
                     $row['item_name'] = $aRow['item_name'];
+                    $row['price_amount'] = number_format($aRow['price_amount'],0);
                     $row['dropdown_status'] = $dropdown_status;
 
                     $row['start_date'] = $aRow['jo_date'];

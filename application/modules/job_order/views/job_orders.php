@@ -48,6 +48,7 @@
                                 <th><?=lang('vessel_name')?> </th>
                                 <th><?=lang('port_name')?> </th>
                                 <th><?=lang('fare_trip')?> </th>
+                                <th><?=lang('price')?> </th>
                                 <th><?=lang('item')?> </th>
                                 <th><?=lang('status')?></th>
 
@@ -139,6 +140,9 @@ $(function() {
                     "data": "fare_trip_cd"
                 },
                 {
+                    "data": "price_amount"
+                },
+                {
                     "data": "item_name"
                 },
                 {
@@ -166,12 +170,12 @@ $(function() {
         });
         $(".start_date").on("dp.change", function (e) {
             var start_date = $("#start_date").val();
-            table_job_order.columns(11).search(start_date).draw();
+            table_job_order.columns(12).search(start_date).draw();
             $("#start_date").blur();
         });
         $(".end_date").on("dp.change", function (e) {
             var end_date = $("#end_date").val();
-            table_job_order.columns(12).search(end_date).draw();
+            table_job_order.columns(13).search(end_date).draw();
             $("#end_date").blur();
         });
     });
