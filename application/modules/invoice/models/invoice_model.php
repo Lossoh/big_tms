@@ -16,7 +16,8 @@ class invoice_model extends CI_Model
                 $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
             }
             */
-                
+            
+            /*
             if(isset($dataPost['cekDa'])){
                 $cekDa = 1;
                 $base_amt = str_replace('.','',$dataPost['TotalBase']);
@@ -31,9 +32,24 @@ class invoice_model extends CI_Model
                 $total_amt = str_replace('.','',$dataPost['GrandTotal']);
                 $bal_amt = str_replace('.','',$dataPost['GrandTotal']);
             }
+            */
+
+            if(isset($dataPost['cekDa'])){
+                $cekDa = 1;
+                $base_amt = str_replace('.','',$dataPost['total_price_amount']);
+                $tax_amt = 0;
+                $total_amt = str_replace('.','',$dataPost['total_price_amount']);
+                $bal_amt = str_replace('.','',$dataPost['total_price_amount']);
+            }
+            else{
+                $cekDa = 0;
+                $base_amt = str_replace('.','',$dataPost['total_price_amount']);
+                $tax_amt = ($base_amt * 10) / 100;
+                $total_amt = $base_amt + $tax_amt;
+                $bal_amt = $base_amt + $tax_amt;
+            }
 
             $invoice_date = date('Y-m-d',strtotime($dataPost['invoice_date']));
-            
             $year = date('Y',strtotime($invoice_date));
             $month = date('m',strtotime($invoice_date));
     
@@ -469,7 +485,7 @@ class invoice_model extends CI_Model
                 'journal_date' => $invoice_date,
                 'journal_type' => 'invoice',
                 'descs'        => ucfirst($dataPost['invoice_remark_header']),
-                'trx_amt' => 0 + str_replace('.','',$dataPost['GrandTotal']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
+                'trx_amt' => 0 + str_replace('.','',$dataPost['total_price_amount']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
                 'ref_prefix' => $sa_spec_prefix,
                 'ref_year'   =>$year,
                 'ref_month'  =>$month,
@@ -496,7 +512,7 @@ class invoice_model extends CI_Model
                 'journal_date' => $invoice_date,
                 'journal_type' => 'invoice',
                 'descs'        => ucfirst($dataPost['invoice_remark_header']),
-                'trx_amt' => 0 + str_replace('.','',$dataPost['GrandTotal']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
+                'trx_amt' => 0 + str_replace('.','',$dataPost['total_price_amount']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
                 'ref_prefix' => $sa_spec_prefix,
                 'ref_year'   =>$year,
                 'ref_month'  =>$month,
@@ -546,7 +562,7 @@ class invoice_model extends CI_Model
                 'gl_trx_hdr_journal_no' =>$gl_coa_no,
                 'gl_trx_hdr_journal_date' =>$invoice_date,
                 'coa_rowID'         =>$coa_receivable_RowID,
-                'trx_amt'           => str_replace('.','',$dataPost['GrandTotal']),
+                'trx_amt'           => str_replace('.','',$dataPost['total_price_amount']),
                 'descs'             => '',
                 'dep_rowID'         => $this->session->userdata('dep_rowID'),
                 'debtor_creditor_rowID' =>$dataPost['debtor_id'],
@@ -578,7 +594,7 @@ class invoice_model extends CI_Model
                 'gl_trx_hdr_journal_no' =>$gl_coa_no,
                 'gl_trx_hdr_journal_date' =>$invoice_date,
                 'coa_rowID'         =>$coa_receivable_RowID,
-                'trx_amt'           => str_replace('.','',$dataPost['GrandTotal']),
+                'trx_amt'           => str_replace('.','',$dataPost['total_price_amount']),
                 'descs'             => '',
                 'dep_rowID'         => $this->session->userdata('dep_rowID'),
                 'debtor_creditor_rowID' =>$dataPost['debtor_id'],
@@ -999,7 +1015,7 @@ class invoice_model extends CI_Model
             'journal_date' =>date('Y-m-d',strtotime($dataPost['invoice_date'])),
             'journal_type' => 'invoice',
             'descs'        => ucfirst($dataPost['invoice_remark_header']),
-            'trx_amt'   => 0 + str_replace('.','',$dataPost['GrandTotal']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
+            'trx_amt'   => 0 + str_replace('.','',$dataPost['total_price_amount']),//str_replace('.','',$dataPost['TotalWth']) + str_replace('.','',$dataPost['GrandTotal']),
             'ref_prefix' => $dataPost['gl_trx_hdr_prefix'],
             'ref_year'   =>$dataPost['gl_trx_hdr_year'],
             'ref_month'  =>$dataPost['gl_trx_hdr_month'],
@@ -1028,7 +1044,7 @@ class invoice_model extends CI_Model
             'gl_trx_hdr_journal_no' =>$gl_coa_no,
             'gl_trx_hdr_journal_date' =>date('Y-m-d',strtotime($dataPost['invoice_date'])),
             'coa_rowID'         =>$coa_receivable_RowID,
-            'trx_amt'           => str_replace('.','',$dataPost['GrandTotal'])*-1,
+            'trx_amt'           => str_replace('.','',$dataPost['total_price_amount'])*-1,
             'descs'             => '',
             'dep_rowID'         => $this->session->userdata('dep_rowID'),
             'debtor_creditor_rowID' =>$dataPost['debtor_id_tmp'],
