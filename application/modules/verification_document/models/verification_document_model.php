@@ -178,9 +178,9 @@ class Verification_document_model extends CI_Model
 		$this->db->join('sa_destination AS g','g.rowID=e.destination_to_rowID', 'LEFT');
 		$this->db->join('sa_item AS h','h.rowID=a.item_rowID', 'LEFT');
 		$this->db->where('a.deleted','0');
-		$this->db->where('a.jo_type',$jo_type);
-		$this->db->where('a.destination_from_rowID',$from_id);
-		$this->db->where('a.destination_to_rowID',$to_id);
+		// $this->db->where('a.jo_type',$jo_type);
+		// $this->db->where('a.destination_from_rowID',$from_id);
+		// $this->db->where('a.destination_to_rowID',$to_id);
 		$this->db->order_by('a.jo_no','desc');        
         $query=$this->db->get();
             

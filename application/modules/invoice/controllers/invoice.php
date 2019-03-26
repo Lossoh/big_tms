@@ -1345,11 +1345,11 @@ class Invoice extends MX_Controller
             $dt['id'] = 'rowID';
 
             $aColumnTable = array(
-                'ar_trx_hdr.rowID', 'ar_trx_hdr.trx_no', 'ar_trx_hdr.trx_date', 'sa_debtor.debtor_name', 'ar_trx_hdr.descs', 'ar_trx_hdr.base_amt', 'ar_trx_hdr.tax_amt', 'ar_trx_hdr.total_amt', 'ar_trx_hdr.verified', 'ar_trx_hdr.prefix', 'ar_trx_hdr.year', 'ar_trx_hdr.month', 'ar_trx_hdr.code', 'sa_debtor.debtor_cd'
+                'ar_trx_hdr.rowID', 'ar_trx_hdr.trx_no', 'ar_trx_hdr.trx_date', 'sa_debtor.debtor_name', 'ar_trx_hdr.jo_no', 'ar_trx_hdr.descs', 'ar_trx_hdr.base_amt', 'ar_trx_hdr.tax_amt', 'ar_trx_hdr.total_amt', 'ar_trx_hdr.verified', 'ar_trx_hdr.prefix', 'ar_trx_hdr.year', 'ar_trx_hdr.month', 'ar_trx_hdr.code', 'sa_debtor.debtor_cd'
             );
 
             $aColumns = array(
-                'ar_trx_hdr.rowID', 'ar_trx_hdr.trx_no', 'ar_trx_hdr.trx_date', 'sa_debtor.debtor_name', 'ar_trx_hdr.descs', 'ar_trx_hdr.base_amt', 'ar_trx_hdr.tax_amt', 'ar_trx_hdr.total_amt', 'ar_trx_hdr.verified', 'ar_trx_hdr.prefix', 'ar_trx_hdr.year', 'ar_trx_hdr.month', 'ar_trx_hdr.code', 'sa_debtor.debtor_cd'
+                'ar_trx_hdr.rowID', 'ar_trx_hdr.trx_no', 'ar_trx_hdr.trx_date', 'sa_debtor.debtor_name', 'ar_trx_hdr.jo_no', 'ar_trx_hdr.descs', 'ar_trx_hdr.base_amt', 'ar_trx_hdr.tax_amt', 'ar_trx_hdr.total_amt', 'ar_trx_hdr.verified', 'ar_trx_hdr.prefix', 'ar_trx_hdr.year', 'ar_trx_hdr.month', 'ar_trx_hdr.code', 'sa_debtor.debtor_cd'
             );
 
             $groupBy = '';
@@ -1514,6 +1514,7 @@ class Invoice extends MX_Controller
                     $row['trx_no'] = $aRow['trx_no'];
                     $row['trx_date'] = date("d F Y",strtotime($aRow['trx_date']));
                     $row['debtor'] = $aRow['debtor_cd'] . ' - ' . $aRow['debtor_name'];
+                    $row['jo_no'] = $aRow['jo_no'];
                     $row['descs'] = $aRow['descs'];
                     $row['base_amt'] = number_format($aRow['base_amt'],2,$this->config->item('decimal_separator'),$this->config->item('thousand_separator'));
                     $row['tax_amt'] = number_format($aRow['tax_amt'],2,$this->config->item('decimal_separator'),$this->config->item('thousand_separator'));

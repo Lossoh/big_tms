@@ -41,6 +41,7 @@
                             <th>Invoice No</th>
                             <th>Invoice Date</th>
                             <th>Debtor Name</th>
+                            <th>Job Order</th>
                             <th>Remark</th>
                             <th>Base Amount</th>
                             <th>Vat</th>
@@ -699,6 +700,9 @@ $(function() {
                 },
                 {
                     "data": "debtor"
+                },
+                {
+                    "data": "jo_no"
                 },
                 {
                     "data": "descs"
