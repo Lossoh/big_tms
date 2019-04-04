@@ -170,8 +170,9 @@
         <table width="100%" border="0" align="center" cellpadding="2" cellspacing="0">
         	<tr style="background-color:#fff;color:#000;">
                 <th width="5%" style="border:#000 solid 1px;">No</th>
-                <th width="13%" style="border:#000 solid 1px;">Realization No</th>
-                <th width="10%" style="border:#000 solid 1px;">Date</th>
+                <th width="9%" style="border:#000 solid 1px;">Realization No</th>
+                <th width="9%" style="border:#000 solid 1px;">Date</th>
+                <th width="9%" style="border:#000 solid 1px;">Police No</th>
                 <th width="20%" style="border:#000 solid 1px;">Cost Name</th>
                 <th style="border:#000 solid 1px;">Description</th>
                 <th width="15%" style="border:#000 solid 1px;">Amount (Rp)</th>
@@ -194,9 +195,10 @@
                     $total_field_cost_do += $row_do->trx_amt;
             ?>
                     <tr>
-                        <td align="center" style="border-left:#000 solid 1px;border-right:#000 solid 1px;<?=$border_bottom?>"><?=$i++?></td>						
+                        <td align="center" style="border-left:#000 solid 1px;border-right:#000 solid 1px;<?=$border_bottom?>"><?=$i++?></td>
                         <td align="left" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=$row_do->trx_no?></td>
                         <td align="left" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=date('d-m-Y',strtotime($row_do->trx_date))?></td>
+                        <td align="left" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=$row_do->police_no?></td>
                         <td align="left" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=$row_do->cost_name?></td>
                         <td align="left" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=$row_do->descs?></td>
                         <td align="right" style="border-right:#000 solid 1px;<?=$border_bottom?>"><?=number_format($row_do->trx_amt,2)?></td>
@@ -205,7 +207,7 @@
                 }
             ?>
                 <tr style="background-color:#fff;color:#000;">
-                    <th align="right" colspan="5" style="border:#000 solid 1px;">Total &nbsp; </th>
+                    <th align="right" colspan="6" style="border:#000 solid 1px;">Total &nbsp; </th>
                     <th align="right" style="border:#000 solid 1px;"><?=number_format($total_field_cost_do,2)?></th>
                 </tr>
             <?php 
@@ -213,7 +215,7 @@
             else{
             ?>
                 <tr>
-                    <td align="center" colspan="6" style="border:#000 solid 1px;">Data not available</td>						
+                    <td align="center" colspan="7" style="border:#000 solid 1px;">Data not available</td>						
                 </tr>
             <?php   
             }

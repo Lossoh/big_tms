@@ -329,11 +329,13 @@ class Generate_commission_model extends CI_Model
     }
     
     function get_field_cost_by_comm_detail($comm_no,$until_date){
-		$sql = "SELECT b.*, d.descs as cost_name
+		$sql = "SELECT b.*, d.descs as cost_name, f.police_no
                 FROM (`tr_do_trx` as a) LEFT JOIN `tr_cost_trx` as b ON `b`.`trx_no` = `a`.`trx_no` 
 										LEFT JOIN `sa_users` as c ON `c`.`rowID` = `a`.`user_created`
 										LEFT JOIN `sa_cost` as d ON `d`.`rowID` = `b`.`cost_rowID`
-                WHERE `a`.`deleted` = 0 AND `b`.`deleted` = 0 AND `a`.`status` = 1 AND `a`.`commission_no` = '".$comm_no."' AND `a`.`date_verified` <= '".$until_date."' 
+										LEFT JOIN `cb_cash_adv` as e ON `e`.`trx_no` = `a`.`trx_no`
+										LEFT JOIN `sa_vehicle` as f ON `f`.`rowID` = `e`.`vehicle_rowID`
+                WHERE `a`.`deleted` = 0 AND `b`.`deleted` = 0 AND `e`.`deleted` = 0 AND `a`.`status` = 1 AND `a`.`commission_no` = '".$comm_no."' AND `a`.`date_verified` <= '".$until_date."' 
       				      AND `b`.`cost_rowID` != 2
                 ORDER BY `b`.`trx_no`";
           
@@ -346,10 +348,12 @@ class Generate_commission_model extends CI_Model
     }
     
     function get_field_cost_by_comm_detail_departement($comm_no,$until_date,$departement_id){
-		$sql = "SELECT b.*, d.descs as cost_name
+		$sql = "SELECT b.*, d.descs as cost_name, f.police_no
                 FROM (`tr_do_trx` as a) LEFT JOIN `tr_cost_trx` as b ON `b`.`trx_no` = `a`.`trx_no` 
 										LEFT JOIN `sa_users` as c ON `c`.`rowID` = `a`.`user_created`
 										LEFT JOIN `sa_cost` as d ON `d`.`rowID` = `b`.`cost_rowID`
+										LEFT JOIN `cb_cash_adv` as e ON `e`.`trx_no` = `a`.`trx_no`
+										LEFT JOIN `sa_vehicle` as f ON `f`.`rowID` = `e`.`vehicle_rowID`
                 WHERE `a`.`deleted` = 0 AND `b`.`deleted` = 0 AND `a`.`status` = 1 AND `a`.`commission_no` = '".$comm_no."' AND `a`.`date_verified` <= '".$until_date."' 
       				      AND `b`.`cost_rowID` != 2 AND `c`.`dep_rowID` = ".$departement_id."
                 ORDER BY `b`.`trx_no`";
